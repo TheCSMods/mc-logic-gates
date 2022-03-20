@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "   ",
+        " #R",
+        " A "
+    ],
+    "key": {
+        "#": {
+            "item": "logicgates:and_gate"
+        },
+        "R": {
+            "item": "logicgates:nand_gate"
+        },
+        "A": {
+            "item": "logicgates:or_gate"
+        }
+    },
+    "result": {
+        "item": "logicgates:xor_gate",
+        "count": 1
+    }
+}

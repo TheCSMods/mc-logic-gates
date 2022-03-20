@@ -1,0 +1,7 @@
+{
+	"parent":"logicgates:block/gate_base",
+	"textures":
+	{
+		"overlay": "logicgates:block/zero_tick_repeater/ztr_off"
+	}
+}

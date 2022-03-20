@@ -1,0 +1,13 @@
+{
+	"itemGroup.logicgates.itemgroup": "Logic Gates",
+	
+	"block.logicgates.zero_tick_repeater": "Zero tick repeater",
+	
+	"block.logicgates.and_gate": "And gate",
+	"block.logicgates.or_gate": "Or gate",
+	"block.logicgates.xor_gate": "Exclusive or gate",
+	"block.logicgates.not_gate": "Not gate",
+	"block.logicgates.nand_gate": "Not and gate",
+	"block.logicgates.nor_gate": "Not or gate",
+	"block.logicgates.xnor_gate": "Exclusive not or gate"
+}

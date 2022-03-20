@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "   ",
+        " #R",
+        "   "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:repeater"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        }
+    },
+    "result": {
+        "item": "logicgates:zero_tick_repeater",
+        "count": 1
+    }
+}

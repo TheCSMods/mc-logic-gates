@@ -2,6 +2,6 @@
 	"parent":"logicgates:block/gate_base",
 	"textures":
 	{
-		"overlay": "logicgates:block/zero_tick_repeater/ztr_off"
+		"overlay": "logicgates:block/wire_turn/wt_right_on"
 	}
 }

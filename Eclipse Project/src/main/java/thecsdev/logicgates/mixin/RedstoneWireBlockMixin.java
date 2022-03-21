@@ -17,6 +17,7 @@ import thecsdev.logicgates.block.AbstractLogicGateBlock;
 @Mixin(RedstoneWireBlock.class)
 public abstract class RedstoneWireBlockMixin
 {
+	// ==================================================
 	@Inject(method = "connectsTo(Lnet/minecraft/block/BlockState;Lnet/minecraft/util/math/Direction;)Z",
 			at = @At("HEAD"), cancellable = true, remap = true)
 	private static void connectsTo_tcd_mixin(BlockState state, Direction dir, CallbackInfoReturnable<Boolean> e)
@@ -46,4 +47,5 @@ public abstract class RedstoneWireBlockMixin
 			}
 		}
 	}
+	// ==================================================
 }

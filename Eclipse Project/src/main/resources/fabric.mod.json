@@ -19,7 +19,7 @@
 	"environment": "*",
 	"entrypoints":
 	{
-		"main": ["thecsdev.logicgates.LogicGates"]
+		"main": ["thecsdev.logicgates.fabric.LogicGatesFabric"]
 	},
 	"mixins": ["logicgates.mixins.json"],
 

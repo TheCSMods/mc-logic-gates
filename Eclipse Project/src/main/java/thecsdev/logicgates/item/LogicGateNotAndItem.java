@@ -1,12 +1,10 @@
 package thecsdev.logicgates.item;
 
-import thecsdev.logicgates.block.LogicGateNotAndBlock;
+import thecsdev.logicgates.LogicGatesBlocks;
 
 public final class LogicGateNotAndItem extends AbstractLogicGateItem
 {
 	// ==================================================
-	public final static LogicGateNotAndItem ITEM = new LogicGateNotAndItem();
-	// ==================================================
-	public LogicGateNotAndItem() { super(LogicGateNotAndBlock.BLOCK); }
+	public LogicGateNotAndItem() { super(LogicGatesBlocks.LOGIC_GATE_NAND); }
 	// ==================================================
 }

@@ -1,5 +1,5 @@
 {
-	"parent": "logicgates:block/zero_tick_repeater/ztr_off",
+	"parent": "logicgates:block/wire/wire_off",
 	"display":
 	{
 		"thirdperson_righthand":

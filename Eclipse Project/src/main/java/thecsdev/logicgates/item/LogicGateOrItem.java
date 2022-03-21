@@ -1,12 +1,10 @@
 package thecsdev.logicgates.item;
 
-import thecsdev.logicgates.block.LogicGateOrBlock;
+import thecsdev.logicgates.LogicGatesBlocks;
 
 public final class LogicGateOrItem extends AbstractLogicGateItem
 {
 	// ==================================================
-	public final static LogicGateOrItem ITEM = new LogicGateOrItem();
-	// ==================================================
-	public LogicGateOrItem() { super(LogicGateOrBlock.BLOCK); }
+	public LogicGateOrItem() { super(LogicGatesBlocks.LOGIC_GATE_OR); }
 	// ==================================================
 }

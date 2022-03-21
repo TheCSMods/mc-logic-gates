@@ -3,6 +3,7 @@ package thecsdev.logicgates.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
@@ -25,11 +26,19 @@ public abstract class AbstractLogicSideGateBlock extends AbstractLogicGateBlock
 		stateManager.add(SWAPPED_DIR);
     }
 	// --------------------------------------------------
+	@Override
+	public BlockState getPlacementState(ItemPlacementContext ctx)
+	{
+		BlockState state = super.getPlacementState(ctx);
+		state = state.with(SWAPPED_DIR, false);
+		return state;
+	}
+	// --------------------------------------------------
 	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit)
 	{
 		//check adventure mode and stuff, and
 		//check if supports switching
-		if (!(player.getAbilities()).allowModifyWorld || !supportsSideDirection())
+		if (!player.getAbilities().allowModifyWorld || !supportsSideDirection())
 			return ActionResult.PASS;
 		
 		//toggle swapped direction

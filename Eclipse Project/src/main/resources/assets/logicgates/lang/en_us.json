@@ -1,7 +1,8 @@
 {
 	"itemGroup.logicgates.itemgroup": "Logic Gates",
 	
-	"block.logicgates.zero_tick_repeater": "Zero tick repeater",
+	"block.logicgates.wire": "Logic gate wire",
+	"block.logicgates.wire_turn": "Logic gate wire turn",
 	
 	"block.logicgates.and_gate": "And gate",
 	"block.logicgates.or_gate": "Or gate",
@@ -9,5 +10,8 @@
 	"block.logicgates.not_gate": "Not gate",
 	"block.logicgates.nand_gate": "Not and gate",
 	"block.logicgates.nor_gate": "Not or gate",
-	"block.logicgates.xnor_gate": "Exclusive not or gate"
+	"block.logicgates.xnor_gate": "Exclusive not or gate",
+	
+	"block.logicgates.sr_latch": "Set-Reset latch",
+	"block.logicgates.data_latch": "Data latch"
 }

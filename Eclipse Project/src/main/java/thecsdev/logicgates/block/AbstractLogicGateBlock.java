@@ -58,12 +58,6 @@ public abstract class AbstractLogicGateBlock extends AbstractRedstoneGateBlock
 		stateManager.add(POWERED);
     }
  	// --------------------------------------------------
- 	public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved)
-	{
-	    for (Direction direction : Direction.values())
-	    	world.updateNeighborsAlways(pos.offset(direction), this);
-	}
- 	// --------------------------------------------------
  	@Override
 	public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) { return SHAPE; }
 	// --------------------------------------------------
@@ -76,7 +70,6 @@ public abstract class AbstractLogicGateBlock extends AbstractRedstoneGateBlock
 		BlockState state = getDefaultState();
 		state = state.with(FACING, ctx.getPlayerFacing().getOpposite());
 		state = state.with(POWERED, hasPower(ctx.getWorld(), ctx.getBlockPos(), state));
-		if(supportsSideDirection()) state = state.with(SWAPPED_DIR, false);
 		return state;
 	}
 	// ==================================================
@@ -145,7 +138,7 @@ public abstract class AbstractLogicGateBlock extends AbstractRedstoneGateBlock
 	 * Returns true if all the conditions were met
 	 * for this {@link AbstractLogicGateBlock}.
 	 */
-	public abstract boolean gateConditionsMet(BlockState state, WorldView world, BlockPos pos);
+	public abstract boolean gateConditionsMet(BlockState state, World world, BlockPos pos);
 	// --------------------------------------------------
 	/**
 	 * Returns true or false based on whether side inputs

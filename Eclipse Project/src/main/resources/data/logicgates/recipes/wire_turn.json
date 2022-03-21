@@ -1,20 +1,22 @@
 {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-        "   ",
-        " #R",
-        "   "
+        "# ",
+        "RP"
     ],
     "key": {
         "#": {
-            "item": "minecraft:repeater"
+            "item": "minecraft:redstone_torch"
         },
         "R": {
+            "item": "minecraft:stone"
+        },
+		"P": {
             "item": "minecraft:redstone"
         }
     },
     "result": {
-        "item": "logicgates:zero_tick_repeater",
+        "item": "logicgates:wire_turn",
         "count": 1
     }
 }

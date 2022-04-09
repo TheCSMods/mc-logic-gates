@@ -26,3 +26,9 @@ Here is a short video showing how some of the logic gates work (click the image)
 
 # How to craft the logic gates
 More info, including how logic gates work and how to craft them can be found on the Wiki page. They are simply too long to fit on this page.
+
+##
+<p align=center>
+  <a href="https://www.curseforge.com/minecraft/mc-mods/logic-gates-fabric"><img alt="CurseForge" src="https://cf.way2muchnoise.eu/596687.svg"/></a>
+  <a href="https://modrinth.com/mod/logic-gates-fabric"><img alt="Modrinth" src="https://img.shields.io/modrinth/dt/Oml2NJFF?label=Modrinth"></a>
+</p>

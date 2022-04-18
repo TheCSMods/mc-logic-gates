@@ -1,6 +1,5 @@
 package thecsdev.logicgates.block;
 
-import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.block.AbstractRedstoneGateBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -35,7 +34,10 @@ public abstract class AbstractLogicGateBlock extends AbstractRedstoneGateBlock
 	protected AbstractLogicGateBlock()
 	{
 		super(SETTINGS);
-		BlockRenderLayerMap.INSTANCE.putBlock(this, RenderLayer.getCutout());
+		
+		//i don't feel like dealing with sides, so i'm just gonna catch
+		try { net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap.INSTANCE.putBlock(this, RenderLayer.getCutout()); }
+		catch(NoClassDefFoundError e) {}
 		
 		setDefaultState(getDefaultState().with(POWERED, false));
 		if(supportsSideDirection())

@@ -1,8 +1,9 @@
-package thecsdev.logicgates.block;
+package thecsdev.logicgates.block.latches;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import thecsdev.logicgates.block.AbstractLatchBlock;
 
 public class LatchDataBlock extends AbstractLatchBlock
 {

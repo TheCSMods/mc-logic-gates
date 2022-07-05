@@ -1,6 +1,20 @@
 package thecsdev.logicgates;
 
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_CLOCK;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LATCH_DATA;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LATCH_SETRESET;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_AND;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_NAND;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_NOR;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_NOT;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_OR;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_WIRE;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_WIRE_TURN;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_XNOR;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_XOR;
+
 import net.minecraft.util.registry.Registry;
+import thecsdev.logicgates.item.ClockItem;
 import thecsdev.logicgates.item.LatchDataItem;
 import thecsdev.logicgates.item.LatchSetResetItem;
 import thecsdev.logicgates.item.LogicGateAndItem;
@@ -12,8 +26,6 @@ import thecsdev.logicgates.item.LogicGateNotOrItem;
 import thecsdev.logicgates.item.LogicGateOrItem;
 import thecsdev.logicgates.item.LogicGateWireItem;
 import thecsdev.logicgates.item.LogicGateWireTurnItem;
-
-import static thecsdev.logicgates.LogicGatesConfig.*;
 
 /**
  * Holds all of the blocks from logic gates.
@@ -34,6 +46,8 @@ public class LogicGatesItems
 	
 	public static LatchSetResetItem LATCH_SETRESET;
 	public static LatchDataItem LATCH_DATA;
+	
+	public static ClockItem CLOCK;
 	// ==================================================
 	static void registerAll()
 	{
@@ -93,6 +107,12 @@ public class LogicGatesItems
 		{
 			LATCH_DATA = new LatchDataItem();
 			Registry.register(Registry.ITEM, LATCH_DATA.getIdentifier(), LATCH_DATA);
+		}
+		
+		if(ENABLE_CLOCK)
+		{
+			CLOCK = new ClockItem();
+			Registry.register(Registry.ITEM, CLOCK.getIdentifier(), CLOCK);
 		}
 	}
 	// ==================================================

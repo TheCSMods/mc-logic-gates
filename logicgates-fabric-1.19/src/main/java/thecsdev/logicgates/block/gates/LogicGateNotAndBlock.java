@@ -1,24 +1,24 @@
-package thecsdev.logicgates.block;
+package thecsdev.logicgates.block.gates;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
+import thecsdev.logicgates.block.AbstractLogicSideGateBlock;
 /**
- * The XOR logic gate.
+ * The NAND logic gate.
  */
-public final class LogicGateExclusiveOrBlock extends AbstractLogicSideGateBlock
+public final class LogicGateNotAndBlock extends AbstractLogicSideGateBlock
 {
 	// ==================================================
 	@Override
-	public String getBlockIdPath() { return "xor_gate"; }
+	public String getBlockIdPath() { return "nand_gate"; }
 	// --------------------------------------------------
 	@Override
 	public boolean gateConditionsMet(BlockState thisBlockState, World world, BlockPos pos)
 	{
 		boolean left = getSideInputLevel(thisBlockState, world, pos) > 0;
 		boolean front = getFrontInputLevel(thisBlockState, world, pos) > 0;
-		return left ^ front;
+		return !(left && front);
 	}
 	// ==================================================
 }

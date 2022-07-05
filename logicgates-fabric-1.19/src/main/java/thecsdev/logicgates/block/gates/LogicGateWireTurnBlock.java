@@ -1,19 +1,20 @@
-package thecsdev.logicgates.block;
+package thecsdev.logicgates.block.gates;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import thecsdev.logicgates.block.AbstractLogicSideGateBlock;
 
-public class LogicGateWireBlock extends AbstractLogicGateBlock
+public class LogicGateWireTurnBlock extends AbstractLogicSideGateBlock
 {
 	// ==================================================
 	@Override
-	public String getBlockIdPath() { return "wire"; }
+	public String getBlockIdPath() { return "wire_turn"; }
 	// --------------------------------------------------
 	@Override
 	public boolean gateConditionsMet(BlockState state, World world, BlockPos pos)
 	{
-		return getFrontInputLevel(state, world, pos) > 0;
+		return getSideInputLevel(state, world, pos) > 0;
 	}
 	// ==================================================
 }

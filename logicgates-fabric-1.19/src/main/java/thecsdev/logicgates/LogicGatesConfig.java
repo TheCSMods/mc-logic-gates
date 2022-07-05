@@ -30,6 +30,8 @@ public final class LogicGatesConfig
 	public static boolean ENABLE_LATCH_SETRESET = true;
 	public static boolean ENABLE_LATCH_DATA = true;
 	
+	public static boolean ENABLE_CLOCK = true;
+	
 	/**
 	 * Returns the {@link File} where the
 	 * {@link #PROPERTIES} should be stored.
@@ -74,13 +76,17 @@ public final class LogicGatesConfig
 		
 		ENABLE_LATCH_SETRESET = smartBool(PROPERTIES.getProperty("ENABLE_LATCH_SETRESET"));
 		ENABLE_LATCH_DATA = smartBool(PROPERTIES.getProperty("ENABLE_LATCH_DATA"));
+		
+		ENABLE_CLOCK = smartBool(PROPERTIES.getProperty("ENABLE_CLOCK"));
 	}
 	
 	/**
 	 * idk why i did this. sounds cool ig.
 	 */
-	private static boolean smartBool(String arg0)
+	private static boolean smartBool(String arg0) { return smartBool(arg0, true); }
+	private static boolean smartBool(String arg0, boolean def)
 	{
+		if(arg0 == null) return def;
 		String a = arg0.split(" ")[0].toLowerCase();
 		return (a.startsWith("true") || a.startsWith("ye") ||
 				a.startsWith("ok") || a.startsWith("sur")) && a.length() <= 5;

@@ -13,5 +13,7 @@
 	"block.logicgates.xnor_gate": "Exclusive not or gate",
 	
 	"block.logicgates.sr_latch": "Set-Reset latch",
-	"block.logicgates.data_latch": "Data latch"
+	"block.logicgates.data_latch": "Data latch",
+
+	"block.logicgates.clock": "Logic gate clock"
 }

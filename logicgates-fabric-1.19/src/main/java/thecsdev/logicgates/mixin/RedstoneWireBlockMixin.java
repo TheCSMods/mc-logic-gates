@@ -9,7 +9,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.RedstoneWireBlock;
 import net.minecraft.util.math.Direction;
 import thecsdev.logicgates.block.AbstractLogicGateBlock;
-import thecsdev.logicgates.block.AbstractLogicSideGateBlock;
 import thecsdev.logicgates.block.gates.LogicGateWireTurnBlock;
 
 /**

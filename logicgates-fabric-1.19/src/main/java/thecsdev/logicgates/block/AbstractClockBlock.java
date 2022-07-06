@@ -29,7 +29,7 @@ public abstract class AbstractClockBlock extends AbstractLogicGateBlock
 	protected void scheduleTick(WorldAccess world, BlockPos pos, int delay)
 	{
 	    if (!world.isClient() && !world.getBlockTickScheduler().isQueued(pos, this))
-	      world.createAndScheduleBlockTick(pos, this, delay);
+	    	world.createAndScheduleBlockTick(pos, this, delay);
 	}
 	// ==================================================
 	@SuppressWarnings("deprecation")
@@ -72,9 +72,9 @@ public abstract class AbstractClockBlock extends AbstractLogicGateBlock
 		return state;
 	}
 	
-	public int getTickDelayFromDelay(BlockState state)
+	public int getTickDelayFromDelay(BlockState state) { return getTickDelayFromDelay(state.get(CLOCK_DELAY)); }
+	public int getTickDelayFromDelay(int cd)
 	{
-		int cd = state.get(CLOCK_DELAY);
 		if(cd < 2) return 2;
 		else return 5 * (cd - 1);
 	}

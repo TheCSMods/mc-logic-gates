@@ -93,7 +93,8 @@ public abstract class AbstractClockBlock extends AbstractLogicGateBlock
 		
 		//cycle delay
 		state = state.cycle(CLOCK_DELAY);
-		world.playSound(player, pos, SoundEvents.BLOCK_COMPARATOR_CLICK, SoundCategory.BLOCKS, 0.3f, 1);
+		float pitch = ((float)state.get(CLOCK_DELAY) / 10) + 0.25f;
+		world.playSound(player, pos, SoundEvents.BLOCK_COMPARATOR_CLICK, SoundCategory.BLOCKS, 0.3f, pitch);
 		world.setBlockState(pos, state, 2);
 		//updatePowered(world, pos, state);
 		

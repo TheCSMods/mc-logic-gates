@@ -1,0 +1,50 @@
+# Block name
+Block description and stuff goes here. Since I already ran out of
+placeholder text, I will now type random stuff to fill in as much
+space as possible. I could've used 'Lorem Ipum' as well but whatever.<br/>
+<br/>
+If you are reading this, I likely forgot to remove this page.<br/>
+*or did i?*
+
+## Obtaining
+**Block name** can be broken with any tool, as well as the fist.<br/>
+**Block name** can be crafted using the following crafting recipe:<br/>
+![Crafting recipe](data:image/png;base64,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)
+<table>
+	<tr><td>A</td><td>B</td><td>C</td></tr>
+	<tr><td>A</td><td>B</td><td>C</td></tr>
+	<tr><td>A</td><td>B</td><td>C</td></tr>
+</table>
+
+## Behavior
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
+obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
+nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
+tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
+quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos 
+sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam
+recusandae alias error harum maxime adipisci amet laborum. Perspiciatis 
+minima nesciunt dolorem! Officiis iure rerum voluptates a cumque velit 
+quibusdam sed amet tempora. Sit laborum ab, eius fugit doloribus tenetur 
+fugiat, temporibus enim commodi iusto libero magni deleniti quod quam 
+consequuntur! Commodi minima excepturi repudiandae velit hic maxime
+doloremque. Quaerat provident commodi consectetur veniam similique ad 
+earum omnis ipsum saepe, voluptas, hic voluptates pariatur est explicabo 
+fugiat, dolorum eligendi quam cupiditate excepturi mollitia maiores labore 
+suscipit quas? Nulla, placeat. Voluptatem quaerat non architecto ab laudantium
+modi minima sunt esse temporibus sint culpa, recusandae aliquam numquam 
+totam ratione voluptas quod exercitationem fuga. Possimus quis earum veniam 
+quasi aliquam eligendi, placeat qui corporis!
+
+## Data values
+### Block ID
+`logicgates:placeholder_id`
+
+### Block states
+| Blockstate  | Values                           | Description                          |
+| :---------- | :------------------------------- | :----------------------------------- |
+| `facing`    | `east`, `west`, `north`, `south` | The direction the block is facing.  |
+| `powered`   | `true`, `false` | Whether the block is recieving redstone power. |

@@ -1,0 +1,29 @@
+# XOR gate
+A logic gate whose output is on **only** when **one of** it's inputs are on.
+
+## Obtaining
+This block can be broken with any tool, as well as the fist.<br/>
+It can be crafted using the following crafting recipe:<br/>
+<br/>
+![Crafting recipe](data:image/png;base64,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)
+<br/>
+<table>
+	<tr><td>AND gate</td><td>NAND gate</td><td>-</td></tr>
+	<tr><td>OR gate</td><td>-</td><td>-</td></tr>
+	<tr><td>-</td><td>-</td><td>-</td></tr>
+</table>
+
+## Behavior
+The XOR gate has two inputs and one output.
+The output is on **only** when one of it's inputs are on.
+
+## Data values
+### Block ID
+`logicgates:xor_gate`
+
+### Block states
+| Blockstate  | Values                           | Description                          |
+| :---------- | :------------------------------- | :----------------------------------- |
+| `facing`    | `east`, `west`, `north`, `south` | The direction the block is facing.  |
+| `powered`   | `true`, `false` | Whether the block is recieving redstone power. |
+| `swapped_direction`   | `true`, `false` | Whether the block's side input direction is swapped. |

@@ -1,0 +1,814 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8">
+    
+    
+      
+        <title>AND gate - Logic Gates (Fabric)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#and-gate" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Logic Gates (Fabric)" class="md-header__button md-logo" aria-label="Logic Gates (Fabric)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Logic Gates (Fabric)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AND gate
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Logic Gates (Fabric)" class="md-nav__button md-logo" aria-label="Logic Gates (Fabric)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Logic Gates (Fabric)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Logic gates
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Logic gates" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Logic gates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gate_not/" class="md-nav__link">
+        NOT gate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          AND gate
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        AND gate
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#obtaining" class="md-nav__link">
+    Obtaining
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#behavior" class="md-nav__link">
+    Behavior
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-values" class="md-nav__link">
+    Data values
+  </a>
+  
+    <nav class="md-nav" aria-label="Data values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#block-id" class="md-nav__link">
+    Block ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block-states" class="md-nav__link">
+    Block states
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gate_nand/" class="md-nav__link">
+        NAND gate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gate_or/" class="md-nav__link">
+        OR gate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gate_nor/" class="md-nav__link">
+        NOR gate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gate_xor/" class="md-nav__link">
+        XOR gate
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gate_xnor/" class="md-nav__link">
+        XNOR gate
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Latches
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Latches" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Latches
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../latch_setreset/" class="md-nav__link">
+        SR latch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../latch_data/" class="md-nav__link">
+        DATA latch
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Clocks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Clocks" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Clocks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clock/" class="md-nav__link">
+        Clock generator (v1.1.1)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Other blocks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Other blocks" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Other blocks
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wire/" class="md-nav__link">
+        Wire
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wire_turn/" class="md-nav__link">
+        Wire turn
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        Mod config
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#obtaining" class="md-nav__link">
+    Obtaining
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#behavior" class="md-nav__link">
+    Behavior
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-values" class="md-nav__link">
+    Data values
+  </a>
+  
+    <nav class="md-nav" aria-label="Data values">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#block-id" class="md-nav__link">
+    Block ID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block-states" class="md-nav__link">
+    Block states
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="and-gate">AND gate</h1>
+<p>A logic gate that outputs redstone signal only when both of
+it's inputs are powered.</p>
+<h2 id="obtaining">Obtaining</h2>
+<p>This block can be broken with any tool, as well as the fist.<br/>
+It can be crafted using the following crafting recipe:<br/>
+<br/>
+<img alt="Crafting recipe" src="data:image/png;base64,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" />
+<br/></p>
+<table>
+    <tr><td>-</td><td>Redstone torch</td><td>-</td></tr>
+    <tr><td>Redstone torch</td><td>Redstone dust</td><td>Redstone torch</td></tr>
+    <tr><td>Stone</td><td>Stone</td><td>Stone</td></tr>
+</table>
+
+<h2 id="behavior">Behavior</h2>
+<p>The AND gate has two inputs and one output. The output
+is only powered when both of it's inputs are powered as well.</p>
+<h2 id="data-values">Data values</h2>
+<h3 id="block-id">Block ID</h3>
+<p><code>logicgates:and_gate</code></p>
+<h3 id="block-states">Block states</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Blockstate</th>
+<th align="left">Values</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>facing</code></td>
+<td align="left"><code>east</code>, <code>west</code>, <code>north</code>, <code>south</code></td>
+<td align="left">The direction the block is facing.</td>
+</tr>
+<tr>
+<td align="left"><code>powered</code></td>
+<td align="left"><code>true</code>, <code>false</code></td>
+<td align="left">Whether the block is recieving redstone power.</td>
+</tr>
+<tr>
+<td align="left"><code>swapped_direction</code></td>
+<td align="left"><code>true</code>, <code>false</code></td>
+<td align="left">Whether the block's side input direction is swapped.</td>
+</tr>
+</tbody>
+</table>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../gate_not/" class="md-footer__link md-footer__link--prev" aria-label="Previous: NOT gate" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              NOT gate
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../gate_nand/" class="md-footer__link md-footer__link--next" aria-label="Next: NAND gate" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              NAND gate
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.0238f547.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,30 @@
+# NAND gate
+The NAND gate's output is always opposite to the [AND gate](gate_and.md)'s output.
+
+## Obtaining
+This block can be broken with any tool, as well as the fist.<br/>
+It can be crafted using the following crafting recipe:<br/>
+<br/>
+![Crafting recipe](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVIAAACeCAYAAABgiIKUAAAAAXNSR0IArs4c6QAADVpJREFUeJzt3U9oG+kdxvEnTRh0cGd7cDY0DdssCS0iTbBZjGmGEsSCS0lbWuItDUugt63pwQQMJhRaKJTg06KTu4ctvW1pfWgpbEpZVvggG1OKnNLUkJjNdp2qWlaHeBgcZdI4Pbjv2JpIkeRX1ozk7weCY2kk/wRvfnneP7KOLC0tPRMAYN8+l3QBANDvaKQAYIlGCgCWjiVdQLfduHGj4e03b97scSX14nXF6zH3t3s7gPQgkQKApYFJpK2SW1LJzvbnkkSB9CORAoClI4NyjrTT5Be/vtUaZvxxcc3WNptp9nOb3d/q+mZ1dFoPgM6RSAHA0sCske5Xp7vl7a7BNkuUce1e1+xxrepod+0YwP6RSAHA0qFPpK2SYhwJDkAciRQALB2aRGp7nrNf1xrb3e0HsH8kUgCwNDCJtN1zmQf1/Lb2u3vf6fPHkVQBeyRSALA0MO9sQmO8owk4eCRSALBEIgUASyRSALBEIwUASzRSALA0MOdIr1+/nnQJkqTJyUlJ0sLCQsKV7EhrPZ7nJVwJ0D0kUgCwNDCJ1DCJJykzMzOSdhMg9dQz9SwvLydaB9BNJFIAsEQjBQBLNFIAsEQjBQBLNFIAsEQjTbFyuaxyuZx0GQBaoJGmVLlcluu6cl1X6+vrSZcD4AUG7hxpvwuCQJVKJXrnj+M4ymazWltbU6VS0dmzZxOuEEAciTRFgiCQJI2NjclxHDmOozAMFYahstmsJDHVB1KIRpoS6+vr2t7eVjableM40e2u60raabKe5+m/2//VQ/9hUmUCaICpfcJMCj116lR0m2meew0NDdXd99B/qK1gSydPnuxBlQBehESaIJNCt7e39ejRI73//vvKZDLR/b7vy/f96PswDHX+3HmdP3deY6+N6dKlS1EjBpAcEmkCyuWytra2lMvllMlk5Pu+HMfRhQsXNDc3J0manp6OpvjxZpnJZFSr1RSGoUZHR1UqlSTtplYAvUUj7TGzWZTL5RQEgcIwrFsTnZ6eliTl8/notqmpKTmOEzVQk1Jd15Xv+8pms1pZWZHv+0z1gQTQSHuoXC5rfHxc0m7KNM1QUtRQwzCse9z8/Hz0971JtVqtRn8fHR2VJJVKJZop0GOskfZIsVjU1taWCoWCwjDU8PCwhoeHVavVJClKnJlM5rlGakxNTUVrqEEQRFN5c32pVFKpVNJ7773Xg1cEwKCR9ojnedrY2JC02/DiTVTa2WAaHh6Opvh7mfQahmHURB3HUbFYVLFYjJ7z6tWrPXpVACSm9j2Vy+W0urqqo0ePanNzU4VCQU7GqbvG+3r9ZxlNTU1FR55833/uaNStW7d07949bW9vy/d9miiQABppj42MjEjameqfPn1aT589jZLm67nXVavVoqS6t4lKO+mzVqspn89rYmJCvu/r/v37qlarunbtWiKvBwBT+8R4nqePP/5YT588lbQzbTcN1Kx5msZp/pg11ImJCUnS7du3ValUaKJAwkikCfI8T6urq9rc3NTx48dVKBSUy+Wi99jvZZLp4uKi7ty5E+3000SB5NFIExaf6q+srMh1XZ05cyaa8juOo1KpJN/3oyZ65cqVhCsHYDC1TwnP83T37l09fvxYlUolapyStLa2FiXRarVKEwVShkSaIrlcTtJOOj1x4kT01k9zrOny5ctJlgegCRppCpm1042NDT148EASa6FAmtFIU2pkZETFYlHHjh3jbOghdP369aRL6IrJyUlJij7xYVDRSFPM87yBH4DAIKCRAilmEl2/mpmZkSQtLy8nXMnBYtceACzRSAHAEo0UACwNzBqpWUsyazJJox7g8CCRAoClpon04sWLvazjOUtLSx1dv7CwUPc1KSb5UU9jh+VcIQ4XEikAWHoukZok+uzZs54Xs9fnnSOSpL8sdpZMkz53Z9YgTfKjnnr9dq6wWCxKIkHjxUikAGApSqTxJGqbGH7wrcZrrL+71V7C/Nb33qirq9M1U6CbSKZ4ERIpAFjq2jnSeAI99/NvSpJe+vJLkqTNf23WXdduMgXShGSKRkikAGBp34k0nkAv/voHdd/f/dNdSbuJ1Hw1SZVk2lq5XJYknTx5MuFKEDcIyZTx1T0k0pQql8tyXVeu62p9fT3pcjBgGF/d1XYibZVAzRqo8dk/P6v7/sSFE5J2k6l5PMm0XhAEqlQqUdJxHEfZbFZra2uqVCo6e/ZswhVir35Lpoyvg0EiTZEgCCRJY2Njchwn+nz7MAyVzWYl7U7HgE4xvg5O00T65ncvSZKePHkiaTdBxpOnEd+d/9oPv1Z3u1kz/fTvn0qSvvKdr9Q972FPpuvr63r55Zd17tw5hWEY3W4+2z4IAnmep7/+7a966D/UF9wvJFgt4tKeTBlfB4tEmrAgCBQEgU6dOiXHcSTtDO5MJqNMJhNdNzQ0JMdx5LquPvzgQz30H5Ie0BLjqzdarpG++pNvNLzdJM94EjXfx68zTBKN3//sq1+SJE1c2kmm5p1Ng8ykBEl69OiRCoWCZmdno/t936+7PgxDnT93Xh9+8KHGXhuTtPOZ90NDQ70rOmEm+aVVmpIp46t3BuYXO/eTcrmsra0t5XI5ZTIZ+b4vx3F04cIF+b6v+fn5ho+bmpqSJM3OzqpWqykMQ42OjqpUKkkSAx6SXjy+5ubmmj6O8bV/bTfS//ztP5KkL772xbrbi3P//x94tv5/4HhCjSfXf/z2H3XXv/OzdyRJP/z+t9stqS+Z6VIul1MQBArDMJpySWraRM1909PTUZJwXVdzc3Oanp7WysqKfN/nTGBKJJVMW42vF2F87R9rpD1ULpc1Pj6u8fHxaAfVdd1o57Qd+Xxe8/PzchxH1WpVU1NTyufzGh0d1ejoKOtahxjjKzltJ9LZiztrK3NL9VMDk0RNMo3v1hvmfuOnP/qpJOmVV16RJH3yySdtF92PisWiTpw4oUKhIM/zNDw8LEmq1WqSds7z7V38b8ZMu4Ig0NDQkMIwjKZkpVJJpVJJi4uLunr16sG9GLTU6yTK+EoWibRHPM/TxsaGpN0B2WiQm0HbyOzsrHzfVz6f17vvvhs9tlgsqlgsRs/JID98GF/JappIg9hM4NVXX5UkzapxMo0n0XgCNWugJnnGk+gvf/PLzqvvM7lcTqurqzp69Kg2NzdVKBTkZOrXr7yve5qdnX1uU8AMctd163Zeb926pXv37ml7e1u+7w/8IE8i6XUiyd16xldy2LXvsZGREUk7/0BPnz6tp8+eRoeiX8+9rlqtplqtpunpaYVhKNd1o8eazYB8Pq+JiQn5vq/79++rWq3q2rVrSb0kpAjjKxlNG+kf/7woafdc54/1Y0nSr978laTnk+lHH3xU9/h4Ao0n0bd+8Vbd9Zulf+/3NfQlz/NULBajXVDXdaOpmNlpdRwnuk1SlBQmJiYkSbdv32aQp0Qazo3uxfjqLRJpgjzP0+rqqjY3N3X8+HEVCgXlcrnoPdB7meSwuLioO3fuREdUGORohvHVOy0bqfkUz1bJVLGPaOo0gcY/LfTtt99uWfwgiE/FVlZW5Lquzpw5E03JHMdRqVSS7/vRIL9y5UrClUNKXxKNY3z1Brv2KeF5nu7evavHjx+rUqlEA1uS1tbWoqRQrVYZ5OgY4+tgtT21b5VMFxcX666P78K3SqDY2XWVds8EmrfmmWMnly9fTrI87JH2JNoI4+vgsEaaQmZta2NjQw8ePJDEWhW6h/HVfR030mbJNL5rTwK1MzIyomKxqGPHjnF2L0X6MYk2wvjqLhJpinmeNzD/cJE+jK/u2XcjjSfTZvcDg4CGgxdh1x4ALEWJdGlpJ0EeOXJEkvTGG+39hvpmv8ne9hzorT/8vq4uIAkkUbSDRAoAlp5bIzUJ8OLFxmufvdJpEp2cnJQkzczMHEQ5HaMe4PAgkQKApaa79v22NrmwsFD3NSkm+VFPY6Ye1h4xSEikAGBp4A7km8STFLMGaZIf9dQz9SwvLydaB9BNJFIAsEQjBQBLNFIAsDRwa6TAIODcb38hkQKAJRIpkELmnC2nG/oDiRQALNFIAcASjRQALNFIAcASjRQALNFIAcASjRQALNFIAcASjRQALNFIAcASjRQALNFIAcASjRQALNFIAcASjRQALNFIAcASjRQALNFIAcASjRQALNFIAcASjRQALNFIAcASjRQALNFIAcASjRQALB1LuoBumZyclCTNzMwkXMkO6gEODxIpAFg6srS09CzpIgCgn5FIAcASjRQALNFIAcBSy137GzduNLz95s2bXS8mSeZ1DtrrAnDwSKQAYKllIjUJjcQGAI2RSAHAkvU7m5qtoRrxBNsq2Ta7v9212v3W0+2fH0/y7V4fx0wASD8SKQBY6tp77Q8qUe03sbV7fas1YNsE3enzAeg/JFIAsNQ3v/2p1dpn2jRLnCRRYPCQSAHAUs8TabM1yVZrh4Oa5Jrt7gPoHyRSALDU8Xvtu7Xr3GkS7fR8aLfqafXzu5WUW50KAJBeJFIAsMRvyE/YQSdtAAePRAoAlkikAGCJRAoAlmikAGCJRgoAlmikAGCJRgoAlv4H/JYyNgVZ+84AAAAASUVORK5CYII=)
+<br/>
+<table>
+	<tr><td>-</td><td>AND gate</td><td>-</td></tr>
+	<tr><td>-</td><td>NOT gate</td><td>-</td></tr>
+	<tr><td>-</td><td>-</td><td>-</td></tr>
+</table>
+
+## Behavior
+The NAND gate has two inputs and one output.
+The output is similar to that of [AND gate](gate_and.md),
+except it is always opposite to the [AND gate](gate_and.md)'s output.
+
+## Data values
+### Block ID
+`logicgates:nand_gate`
+
+### Block states
+| Blockstate  | Values                           | Description                          |
+| :---------- | :------------------------------- | :----------------------------------- |
+| `facing`    | `east`, `west`, `north`, `south` | The direction the block is facing.  |
+| `powered`   | `true`, `false` | Whether the block is recieving redstone power. |
+| `swapped_direction`   | `true`, `false` | Whether the block's side input direction is swapped. |

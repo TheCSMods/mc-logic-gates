@@ -1,0 +1,52 @@
+site_name: Logic Gates (Fabric)
+
+# The site theme
+theme:
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+# The site navigation
+nav:
+    - 'Home': 'index.md'
+    - 'Logic gates':
+        - 'NOT gate': 'gate_not.md'
+        - 'AND gate': 'gate_and.md'
+        - 'NAND gate': 'gate_nand.md'
+        - 'OR gate': 'gate_or.md'
+        - 'NOR gate': 'gate_nor.md'
+        - 'XOR gate': 'gate_xor.md'
+        - 'XNOR gate': 'gate_xnor.md'
+    - 'Latches':
+        - 'SR latch': 'latch_setreset.md'
+        - 'DATA latch': 'latch_data.md'
+    - 'Clocks':
+        - 'Clock generator (v1.1.1)': 'clock.md'
+    - 'Other blocks':
+        - 'Wire': 'wire.md'
+        - 'Wire turn': 'wire_turn.md'
+    - 'Mod config': 'config.md'
+#    - 'Template block page': 'block_template.md'
+
+# Extensions
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true

@@ -24,5 +24,5 @@ The wire behaves the same as a [wire](wire.md) would, except it has a 90° turn.
 | Blockstate  | Values                           | Description                          |
 | :---------- | :------------------------------- | :----------------------------------- |
 | `facing`    | `east`, `west`, `north`, `south` | The direction the block is facing.  |
-| `powered`   | `true`, `false` | Whether the block is recieving redstone power. |
+| `powered`   | `true`, `false` | Whether the block is emitting redstone power. |
 | `swapped_direction`   | `true`, `false` | Whether the block's side input direction is swapped. |

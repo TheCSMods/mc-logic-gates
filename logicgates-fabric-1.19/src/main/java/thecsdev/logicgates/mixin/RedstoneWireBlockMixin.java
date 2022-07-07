@@ -9,7 +9,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.RedstoneWireBlock;
 import net.minecraft.util.math.Direction;
 import thecsdev.logicgates.block.AbstractLogicGateBlock;
-import thecsdev.logicgates.block.gates.LogicGateWireTurnBlock;
 
 /**
  * This mixin is used to tell redstone wires
@@ -26,27 +25,9 @@ public abstract class RedstoneWireBlockMixin
 		if(state.getBlock() instanceof AbstractLogicGateBlock)
 		{
 			AbstractLogicGateBlock algb = (AbstractLogicGateBlock)state.getBlock();
-			
-			//get gate state dir
-			Direction face_front = state.get(AbstractLogicGateBlock.FACING);
-			Direction face_side = algb.getGateSideDir(state);
-			
-			//check front and back, and check side direction
-			boolean a = (dir == face_front.getOpposite()) && !(state.getBlock() instanceof LogicGateWireTurnBlock);
-			boolean b = (dir == face_front || a);
-			boolean c = (algb.supportsSideDirection() && dir == face_side.getOpposite());
-			
-			if(b || c)
-			{
-				e.setReturnValue(true);
-				e.cancel();
-			}
-			else
-			{
-				//all other sides do not connect
-				e.setReturnValue(false);
-				e.cancel();
-			}
+			e.setReturnValue(algb.dustConnectsToThis(state, dir));
+			e.cancel();
+			return;
 		}
 	}
 	// ==================================================

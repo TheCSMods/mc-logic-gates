@@ -1,6 +1,7 @@
-package thecsdev.logicgates.item;
+package thecsdev.logicgates.item.gates;
 
 import thecsdev.logicgates.LogicGatesBlocks;
+import thecsdev.logicgates.item.AbstractLogicGateItem;
 
 public class LogicGateWireTurnItem extends AbstractLogicGateItem
 {

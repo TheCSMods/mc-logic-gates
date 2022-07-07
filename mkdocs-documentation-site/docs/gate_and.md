@@ -15,8 +15,8 @@ It can be crafted using the following crafting recipe:<br/>
 </table>
 
 ## Behavior
-The AND gate has two inputs and one output. The output
-is only powered when both of it's inputs are powered as well.
+The AND gate has two inputs and one output.<br/>
+The output is only powered when both of it's inputs are powered as well.
 
 ## Data values
 ### Block ID
@@ -26,5 +26,5 @@ is only powered when both of it's inputs are powered as well.
 | Blockstate  | Values                           | Description                          |
 | :---------- | :------------------------------- | :----------------------------------- |
 | `facing`    | `east`, `west`, `north`, `south` | The direction the block is facing.  |
-| `powered`   | `true`, `false` | Whether the block is recieving redstone power. |
+| `powered`   | `true`, `false` | Whether the block is emitting redstone power. |
 | `swapped_direction`   | `true`, `false` | Whether the block's side input direction is swapped. |

@@ -1,4 +1,4 @@
-# Logic gate clock
+# Clock generator (v1.1.1)
 A component that generates clock signals.
 
 ## Obtaining
@@ -21,10 +21,18 @@ means smaller frequency. Right click the block to cycle the delay.<br/>
 A delay of `1` will set the frequency to once every `2` ticks.<br/>
 Any other delay will set the frequency to once every `(delay - 1) * 5` ticks.<br/>
 Keep in mind that when the clock generates a signal, it takes another `2` ticks
-for that signal to go turn off, and for the clock to start waiting for another
+for that signal to turn off, and for the clock to start waiting for another
 signal to be generated. The game usually runs at `20 tps`.<br/>
 <br/>
-Delay values: `1d=2t`; `2d=5t`; `3d=10t`; `4d=15t`; `5d=20t`; `6d=25t`, and so on until `10d=45t`;
+<table>
+	<tr><td colspan=4>Delay values to ticks</td></tr>
+	<tr><td>Delay value</td><td>Ticks</td><td>Delay value</td><td>Ticks</td></tr>
+	<tr><td>1</td><td>2</td><td>6</td><td>25</td></tr>
+	<tr><td>2</td><td>5</td><td>7</td><td>30</td></tr>
+	<tr><td>3</td><td>10</td><td>8</td><td>35</td></tr>
+	<tr><td>4</td><td>15</td><td>9</td><td>40</td></tr>
+	<tr><td>5</td><td>20</td><td>10</td><td>45</td></tr>
+</table>
 
 ## Data values
 ### Block ID
@@ -34,6 +42,5 @@ Delay values: `1d=2t`; `2d=5t`; `3d=10t`; `4d=15t`; `5d=20t`; `6d=25t`, and so o
 | Blockstate  | Values                           | Description                          |
 | :---------- | :------------------------------- | :----------------------------------- |
 | `facing`    | `east`, `west`, `north`, `south` | The direction the block is facing.  |
-| `powered`   | `true`, `false` | Whether the block is recieving redstone power. |
-| `swapped_direction`   | `true`, `false` | Whether the block's side input direction is swapped. |
-| `logicgates_clock_delay`   | `1` to `10` | The delay of the clock block. Right clicking the block cycles the delay. |
+| `powered`   | `true`, `false` | Whether the block is emitting redstone power. |
+| `logicgates_clock_delay`   | `1` to `10`; Default `2`; | The delay of the clock block. Right clicking the block cycles the delay. |

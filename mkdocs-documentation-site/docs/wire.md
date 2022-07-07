@@ -24,4 +24,4 @@ The wire behaves the same as a redstone repeater would, except it has a zero tic
 | Blockstate  | Values                           | Description                          |
 | :---------- | :------------------------------- | :----------------------------------- |
 | `facing`    | `east`, `west`, `north`, `south` | The direction the block is facing.  |
-| `powered`   | `true`, `false` | Whether the block is recieving redstone power. |
+| `powered`   | `true`, `false` | Whether the block is emitting redstone power. |

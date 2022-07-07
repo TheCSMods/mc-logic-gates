@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " # ",
+        "RCR",
+        " J "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:comparator"
+        },
+        "R": {
+            "item": "minecraft:redstone_torch"
+        },
+        "C": {
+            "item": "minecraft:clock"
+        },
+        "J": {
+            "item": "minecraft:redstone"
+        }
+    },
+    "result": {
+        "item": "logicgates:pulse_extender",
+        "count": 1
+    }
+}

@@ -16,12 +16,12 @@ public final class ClockBlock extends AbstractClockBlock
 	{
 		if(state.get(POWERED))
 		{
-			world.setBlockState(pos, (BlockState)state.with(POWERED, false), 2);
+			world.setBlockState(pos, state.with(POWERED, false), 2);
 			scheduleTick(world, pos, getTickDelayFromDelay(state));
 		}
-		else if(!state.get(POWERED) && gateConditionsMet(state, world, pos))
+		else if(!state.get(POWERED) && hasPower(world, pos, state))
 		{
-			world.setBlockState(pos, (BlockState)state.with(POWERED, true), 2);
+			world.setBlockState(pos, state.with(POWERED, true), 2);
 			scheduleTick(world, pos, 2);
 		}
 		updateNeighbors((World)world, pos, state);

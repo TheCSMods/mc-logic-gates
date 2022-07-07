@@ -14,8 +14,8 @@ It can be crafted using the following crafting recipe:<br/>
 </table>
 
 ## Behavior
-The NOT gate has one input and one output. The output is always opposite
-to the input.
+The NOT gate has one input and one output.<br/>
+The output is always opposite to the input.
 
 ## Data values
 ### Block ID
@@ -25,4 +25,4 @@ to the input.
 | Blockstate  | Values                           | Description                          |
 | :---------- | :------------------------------- | :----------------------------------- |
 | `facing`    | `east`, `west`, `north`, `south` | The direction the block is facing.  |
-| `powered`   | `true`, `false` | Whether the block is recieving redstone power. |
+| `powered`   | `true`, `false` | Whether the block is emitting redstone power. |

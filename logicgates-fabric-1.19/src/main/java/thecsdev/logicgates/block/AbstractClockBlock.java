@@ -72,7 +72,7 @@ public abstract class AbstractClockBlock extends AbstractLogicGateBlock
 		return state;
 	}
 	
-	public int getTickDelayFromDelay(BlockState state) { return getTickDelayFromDelay(state.get(CLOCK_DELAY)); }
+	public final int getTickDelayFromDelay(BlockState state) { return getTickDelayFromDelay(state.get(CLOCK_DELAY)); }
 	public int getTickDelayFromDelay(int cd)
 	{
 		if(cd < 2) return 2;

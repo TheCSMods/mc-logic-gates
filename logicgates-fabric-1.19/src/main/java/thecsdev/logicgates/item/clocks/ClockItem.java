@@ -1,6 +1,7 @@
-package thecsdev.logicgates.item;
+package thecsdev.logicgates.item.clocks;
 
 import thecsdev.logicgates.LogicGatesBlocks;
+import thecsdev.logicgates.item.AbstractLogicGateItem;
 
 public final class ClockItem extends AbstractLogicGateItem
 {

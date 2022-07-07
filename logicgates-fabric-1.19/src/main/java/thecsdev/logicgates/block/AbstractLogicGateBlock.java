@@ -18,6 +18,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import thecsdev.logicgates.LogicGates;
+import thecsdev.logicgates.block.gates.LogicGateWireTurnBlock;
 
 /**
  * An abstract class for all logic gate blocks.
@@ -44,11 +45,6 @@ public abstract class AbstractLogicGateBlock extends AbstractRedstoneGateBlock
 			setDefaultState(getDefaultState().with(SWAPPED_DIR, false));
 	}
  	// --------------------------------------------------
- 	/**
-	 * Returns this block's Identifier. See also {@link #getBlockIdPath()}.
-	 */
-	public final Identifier getIdentifier() { return new Identifier(LogicGates.ModID, getBlockIdPath()); }
-	// --------------------------------------------------
 	@Override
 	protected int getUpdateDelayInternal(BlockState state) { return 0; }
 	// --------------------------------------------------
@@ -124,6 +120,27 @@ public abstract class AbstractLogicGateBlock extends AbstractRedstoneGateBlock
 		return getInputLevel(world, frontPos, frontDir);
 	}
 	// ==================================================
+	public boolean dustConnectsToThis(BlockState state, Direction dir)
+	{
+		//get gate state dir
+		Direction face_front = state.get(AbstractLogicGateBlock.FACING);
+		Direction face_side = getGateSideDir(state);
+		
+		//check front and back, and check side direction
+		boolean a = (dir == face_front.getOpposite()) && !(state.getBlock() instanceof LogicGateWireTurnBlock);
+		boolean b = (dir == face_front || a);
+		boolean c = (supportsSideDirection() && dir == face_side.getOpposite());
+		
+		//return
+		if(b || c) return true;
+		else return false;
+	}
+	// --------------------------------------------------
+	/**
+	 * Returns this block's Identifier. See also {@link #getBlockIdPath()}.
+	 */
+	public final Identifier getIdentifier() { return new Identifier(LogicGates.ModID, getBlockIdPath()); }
+	
 	/**
 	 * Returns the block identifier path.<br/>
 	 * Example:

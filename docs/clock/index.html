@@ -13,7 +13,7 @@
     
     
       
-        <title>Clock generator (v1.1.1) - Logic Gates (Fabric)</title>
+        <title>Clock generator - Logic Gates (Fabric)</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#logic-gate-clock" class="md-skip">
+        <a href="#clock-generator-v111" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Clock generator (v1.1.1)
+              Clock generator
             
           </span>
         </div>
@@ -452,12 +452,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Clock generator (v1.1.1)
+          Clock generator
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Clock generator (v1.1.1)
+        Clock generator
       </a>
       
         
@@ -520,6 +520,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clock_pe/" class="md-nav__link">
+        Pulse extender
+      </a>
     </li>
   
 
@@ -689,7 +703,7 @@
                 
 
 
-<h1 id="logic-gate-clock">Logic gate clock</h1>
+<h1 id="clock-generator-v111">Clock generator (v1.1.1)</h1>
 <p>A component that generates clock signals.</p>
 <h2 id="obtaining">Obtaining</h2>
 <p>This block can be broken with any tool, as well as the fist.<br/>
@@ -711,10 +725,19 @@ means smaller frequency. Right click the block to cycle the delay.<br/>
 A delay of <code>1</code> will set the frequency to once every <code>2</code> ticks.<br/>
 Any other delay will set the frequency to once every <code>(delay - 1) * 5</code> ticks.<br/>
 Keep in mind that when the clock generates a signal, it takes another <code>2</code> ticks
-for that signal to go turn off, and for the clock to start waiting for another
+for that signal to turn off, and for the clock to start waiting for another
 signal to be generated. The game usually runs at <code>20 tps</code>.<br/>
-<br/>
-Delay values: <code>1d=2t</code>; <code>2d=5t</code>; <code>3d=10t</code>; <code>4d=15t</code>; <code>5d=20t</code>; <code>6d=25t</code>, and so on until <code>10d=45t</code>;</p>
+<br/></p>
+<table>
+    <tr><td colspan=4>Delay values to ticks</td></tr>
+    <tr><td>Delay value</td><td>Ticks</td><td>Delay value</td><td>Ticks</td></tr>
+    <tr><td>1</td><td>2</td><td>6</td><td>25</td></tr>
+    <tr><td>2</td><td>5</td><td>7</td><td>30</td></tr>
+    <tr><td>3</td><td>10</td><td>8</td><td>35</td></tr>
+    <tr><td>4</td><td>15</td><td>9</td><td>40</td></tr>
+    <tr><td>5</td><td>20</td><td>10</td><td>45</td></tr>
+</table>
+
 <h2 id="data-values">Data values</h2>
 <h3 id="block-id">Block ID</h3>
 <p><code>logicgates:clock</code></p>
@@ -736,16 +759,11 @@ Delay values: <code>1d=2t</code>; <code>2d=5t</code>; <code>3d=10t</code>; <code
 <tr>
 <td align="left"><code>powered</code></td>
 <td align="left"><code>true</code>, <code>false</code></td>
-<td align="left">Whether the block is recieving redstone power.</td>
-</tr>
-<tr>
-<td align="left"><code>swapped_direction</code></td>
-<td align="left"><code>true</code>, <code>false</code></td>
-<td align="left">Whether the block's side input direction is swapped.</td>
+<td align="left">Whether the block is emitting redstone power.</td>
 </tr>
 <tr>
 <td align="left"><code>logicgates_clock_delay</code></td>
-<td align="left"><code>1</code> to <code>10</code></td>
+<td align="left"><code>1</code> to <code>10</code>; Default <code>2</code>;</td>
 <td align="left">The delay of the clock block. Right clicking the block cycles the delay.</td>
 </tr>
 </tbody>
@@ -781,13 +799,13 @@ Delay values: <code>1d=2t</code>; <code>2d=5t</code>; <code>3d=10t</code>; <code
       
       
         
-        <a href="../wire/" class="md-footer__link md-footer__link--next" aria-label="Next: Wire" rel="next">
+        <a href="../clock_pe/" class="md-footer__link md-footer__link--next" aria-label="Next: Pulse extender" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Wire
+              Pulse extender
             </div>
           </div>
           <div class="md-footer__button md-icon">

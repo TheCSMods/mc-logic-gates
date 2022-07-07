@@ -31,6 +31,7 @@ public final class LogicGatesConfig
 	public static boolean ENABLE_LATCH_DATA = true;
 	
 	public static boolean ENABLE_CLOCK = true;
+	public static boolean ENABLE_PULSE_EXTENDER = true;
 	
 	/**
 	 * Returns the {@link File} where the
@@ -78,6 +79,7 @@ public final class LogicGatesConfig
 		ENABLE_LATCH_DATA = smartBool(PROPERTIES.getProperty("ENABLE_LATCH_DATA"));
 		
 		ENABLE_CLOCK = smartBool(PROPERTIES.getProperty("ENABLE_CLOCK"));
+		ENABLE_PULSE_EXTENDER = smartBool(PROPERTIES.getProperty("ENABLE_PULSE_EXTENDER"));
 	}
 	
 	/**

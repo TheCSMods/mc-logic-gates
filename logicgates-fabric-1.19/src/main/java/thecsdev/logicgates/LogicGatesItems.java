@@ -1,6 +1,7 @@
 package thecsdev.logicgates;
 
 import static thecsdev.logicgates.LogicGatesConfig.ENABLE_CLOCK;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_PULSE_EXTENDER;
 import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LATCH_DATA;
 import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LATCH_SETRESET;
 import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_AND;
@@ -14,18 +15,19 @@ import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_XNOR;
 import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_XOR;
 
 import net.minecraft.util.registry.Registry;
-import thecsdev.logicgates.item.ClockItem;
-import thecsdev.logicgates.item.LatchDataItem;
-import thecsdev.logicgates.item.LatchSetResetItem;
-import thecsdev.logicgates.item.LogicGateAndItem;
-import thecsdev.logicgates.item.LogicGateExclusiveNotOrItem;
-import thecsdev.logicgates.item.LogicGateExclusiveOrItem;
-import thecsdev.logicgates.item.LogicGateNotAndItem;
-import thecsdev.logicgates.item.LogicGateNotItem;
-import thecsdev.logicgates.item.LogicGateNotOrItem;
-import thecsdev.logicgates.item.LogicGateOrItem;
-import thecsdev.logicgates.item.LogicGateWireItem;
-import thecsdev.logicgates.item.LogicGateWireTurnItem;
+import thecsdev.logicgates.item.clocks.ClockItem;
+import thecsdev.logicgates.item.clocks.PulseExtenderItem;
+import thecsdev.logicgates.item.gates.LogicGateAndItem;
+import thecsdev.logicgates.item.gates.LogicGateExclusiveNotOrItem;
+import thecsdev.logicgates.item.gates.LogicGateExclusiveOrItem;
+import thecsdev.logicgates.item.gates.LogicGateNotAndItem;
+import thecsdev.logicgates.item.gates.LogicGateNotItem;
+import thecsdev.logicgates.item.gates.LogicGateNotOrItem;
+import thecsdev.logicgates.item.gates.LogicGateOrItem;
+import thecsdev.logicgates.item.gates.LogicGateWireItem;
+import thecsdev.logicgates.item.gates.LogicGateWireTurnItem;
+import thecsdev.logicgates.item.latches.LatchDataItem;
+import thecsdev.logicgates.item.latches.LatchSetResetItem;
 
 /**
  * Holds all of the blocks from logic gates.
@@ -48,6 +50,7 @@ public class LogicGatesItems
 	public static LatchDataItem LATCH_DATA;
 	
 	public static ClockItem CLOCK;
+	public static PulseExtenderItem PULSE_EXTENDER;
 	// ==================================================
 	static void registerAll()
 	{
@@ -113,6 +116,11 @@ public class LogicGatesItems
 		{
 			CLOCK = new ClockItem();
 			Registry.register(Registry.ITEM, CLOCK.getIdentifier(), CLOCK);
+		}
+		if(ENABLE_PULSE_EXTENDER)
+		{
+			PULSE_EXTENDER = new PulseExtenderItem();
+			Registry.register(Registry.ITEM, PULSE_EXTENDER.getIdentifier(), PULSE_EXTENDER);
 		}
 	}
 	// ==================================================

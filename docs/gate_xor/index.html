@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#xor-gate" class="md-skip">
+        <a href="#exclusive-or-gate" class="md-skip">
           Skip to content
         </a>
       
@@ -518,7 +518,21 @@
   
     <li class="md-nav__item">
       <a href="../clock/" class="md-nav__link">
-        Clock generator (v1.1.1)
+        Clock generator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clock_pe/" class="md-nav__link">
+        Pulse extender
       </a>
     </li>
   
@@ -689,13 +703,13 @@
                 
 
 
-<h1 id="xor-gate">XOR gate</h1>
+<h1 id="exclusive-or-gate">Exclusive Or gate</h1>
 <p>A logic gate whose output is on <strong>only</strong> when <strong>one of</strong> it's inputs are on.</p>
 <h2 id="obtaining">Obtaining</h2>
 <p>This block can be broken with any tool, as well as the fist.<br/>
 It can be crafted using the following crafting recipe:<br/>
 <br/>
-<img alt="Crafting recipe" src="data:image/png;base64,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" />
+<img alt="Crafting recipe" src="data:image/png;base64,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" />
 <br/></p>
 <table>
     <tr><td>AND gate</td><td>NAND gate</td><td>-</td></tr>
@@ -704,7 +718,7 @@ It can be crafted using the following crafting recipe:<br/>
 </table>
 
 <h2 id="behavior">Behavior</h2>
-<p>The XOR gate has two inputs and one output.
+<p>The XOR gate has two inputs and one output.<br/>
 The output is on <strong>only</strong> when one of it's inputs are on.</p>
 <h2 id="data-values">Data values</h2>
 <h3 id="block-id">Block ID</h3>
@@ -727,7 +741,7 @@ The output is on <strong>only</strong> when one of it's inputs are on.</p>
 <tr>
 <td align="left"><code>powered</code></td>
 <td align="left"><code>true</code>, <code>false</code></td>
-<td align="left">Whether the block is recieving redstone power.</td>
+<td align="left">Whether the block is emitting redstone power.</td>
 </tr>
 <tr>
 <td align="left"><code>swapped_direction</code></td>

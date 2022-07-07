@@ -1,4 +1,4 @@
-# NAND gate
+# Not And gate
 The NAND gate's output is always opposite to the [AND gate](gate_and.md)'s output.
 
 ## Obtaining
@@ -14,8 +14,8 @@ It can be crafted using the following crafting recipe:<br/>
 </table>
 
 ## Behavior
-The NAND gate has two inputs and one output.
-The output is similar to that of [AND gate](gate_and.md),
+The NAND gate has two inputs and one output.<br/>
+The output is similar to that of [AND gate](gate_and.md),<br/>
 except it is always opposite to the [AND gate](gate_and.md)'s output.
 
 ## Data values
@@ -26,5 +26,5 @@ except it is always opposite to the [AND gate](gate_and.md)'s output.
 | Blockstate  | Values                           | Description                          |
 | :---------- | :------------------------------- | :----------------------------------- |
 | `facing`    | `east`, `west`, `north`, `south` | The direction the block is facing.  |
-| `powered`   | `true`, `false` | Whether the block is recieving redstone power. |
+| `powered`   | `true`, `false` | Whether the block is emitting redstone power. |
 | `swapped_direction`   | `true`, `false` | Whether the block's side input direction is swapped. |

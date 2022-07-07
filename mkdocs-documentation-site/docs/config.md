@@ -21,4 +21,7 @@ ENABLE_LATCH_DATA=true
 
 # Properties for v1.1.1 and up
 ENABLE_CLOCK=true
+
+# Properties for v1.2 and up
+ENABLE_PULSE_EXTENDER=true
 ```

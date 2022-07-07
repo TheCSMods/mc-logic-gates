@@ -33,7 +33,8 @@ nav:
         - 'SR latch': 'latch_setreset.md'
         - 'DATA latch': 'latch_data.md'
     - 'Clocks':
-        - 'Clock generator (v1.1.1)': 'clock.md'
+        - 'Clock generator': 'clock.md'
+        - 'Pulse extender': 'clock_pe.md'
     - 'Other blocks':
         - 'Wire': 'wire.md'
         - 'Wire turn': 'wire_turn.md'
@@ -42,6 +43,7 @@ nav:
 
 # Extensions
 markdown_extensions:
+  - tables
   - attr_list
   - md_in_html
   - pymdownx.superfences

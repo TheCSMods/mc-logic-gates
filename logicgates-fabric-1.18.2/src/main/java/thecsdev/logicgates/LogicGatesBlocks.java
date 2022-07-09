@@ -1,17 +1,19 @@
 package thecsdev.logicgates;
 
 import net.minecraft.util.registry.Registry;
-import thecsdev.logicgates.block.LatchDataBlock;
-import thecsdev.logicgates.block.LatchSetResetBlock;
-import thecsdev.logicgates.block.LogicGateAndBlock;
-import thecsdev.logicgates.block.LogicGateExclusiveNotOrBlock;
-import thecsdev.logicgates.block.LogicGateExclusiveOrBlock;
-import thecsdev.logicgates.block.LogicGateNotAndBlock;
-import thecsdev.logicgates.block.LogicGateNotBlock;
-import thecsdev.logicgates.block.LogicGateNotOrBlock;
-import thecsdev.logicgates.block.LogicGateOrBlock;
-import thecsdev.logicgates.block.LogicGateWireBlock;
-import thecsdev.logicgates.block.LogicGateWireTurnBlock;
+import thecsdev.logicgates.block.clocks.ClockBlock;
+import thecsdev.logicgates.block.clocks.PulseExtenderBlock;
+import thecsdev.logicgates.block.gates.LogicGateAndBlock;
+import thecsdev.logicgates.block.gates.LogicGateExclusiveNotOrBlock;
+import thecsdev.logicgates.block.gates.LogicGateExclusiveOrBlock;
+import thecsdev.logicgates.block.gates.LogicGateNotAndBlock;
+import thecsdev.logicgates.block.gates.LogicGateNotBlock;
+import thecsdev.logicgates.block.gates.LogicGateNotOrBlock;
+import thecsdev.logicgates.block.gates.LogicGateOrBlock;
+import thecsdev.logicgates.block.gates.LogicGateWireBlock;
+import thecsdev.logicgates.block.gates.LogicGateWireTurnBlock;
+import thecsdev.logicgates.block.latches.LatchDataBlock;
+import thecsdev.logicgates.block.latches.LatchSetResetBlock;
 
 /**
  * Holds all of the blocks from logic gates.
@@ -32,6 +34,9 @@ public class LogicGatesBlocks
 	
 	public static final LatchSetResetBlock LATCH_SETRESET = new LatchSetResetBlock();
 	public static final LatchDataBlock LATCH_DATA = new LatchDataBlock();
+	
+	public static final ClockBlock CLOCK = new ClockBlock();
+	public static final PulseExtenderBlock PULSE_EXTENDER = new PulseExtenderBlock();
 	// ==================================================
 	static void registerAll()
 	{
@@ -48,6 +53,9 @@ public class LogicGatesBlocks
 		
 		Registry.register(Registry.BLOCK, LATCH_SETRESET.getIdentifier(), LATCH_SETRESET);
 		Registry.register(Registry.BLOCK, LATCH_DATA.getIdentifier(), LATCH_DATA);
+		
+		Registry.register(Registry.BLOCK, CLOCK.getIdentifier(), CLOCK);
+		Registry.register(Registry.BLOCK, PULSE_EXTENDER.getIdentifier(), PULSE_EXTENDER);
 	}
 	// ==================================================
 }

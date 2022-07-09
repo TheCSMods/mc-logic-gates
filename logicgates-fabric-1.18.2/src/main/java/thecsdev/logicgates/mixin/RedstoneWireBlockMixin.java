@@ -25,26 +25,9 @@ public abstract class RedstoneWireBlockMixin
 		if(state.getBlock() instanceof AbstractLogicGateBlock)
 		{
 			AbstractLogicGateBlock algb = (AbstractLogicGateBlock)state.getBlock();
-			
-			//get gate state dir
-			Direction face_front = state.get(AbstractLogicGateBlock.FACING);
-			Direction face_side = algb.getGateSideDir(state);
-			
-			//check front and back, and check side direction
-			boolean a = (dir == face_front || dir == face_front.getOpposite());
-			boolean b = (algb.supportsSideDirection() && dir == face_side.getOpposite());
-			
-			if(a || b)
-			{
-				e.setReturnValue(true);
-				e.cancel();
-			}
-			else
-			{
-				//all other sides do not connect
-				e.setReturnValue(false);
-				e.cancel();
-			}
+			e.setReturnValue(algb.dustConnectsToThis(state, dir));
+			e.cancel();
+			return;
 		}
 	}
 	// ==================================================

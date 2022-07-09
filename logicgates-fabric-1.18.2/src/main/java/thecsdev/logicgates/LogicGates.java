@@ -3,7 +3,9 @@ package thecsdev.logicgates;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class LogicGates
+import net.fabricmc.api.ModInitializer;
+
+public class LogicGates implements ModInitializer
 {
 	// ==================================================
 	public static final Logger LOGGER = LoggerFactory.getLogger(getModID());
@@ -13,11 +15,23 @@ public class LogicGates
 	// --------------------------------------------------
 	private static boolean initialized = false;
 	// ==================================================
-	public static void onInitialize()
+	/**
+	 * @throws RuntimeException If loading the mod configuration fails.
+	 */
+	@Override
+	public void onInitialize()
 	{
 		//check initialized
 		if(initialized) return;
 		initialized = true;
+		
+		//load config
+		try { LogicGatesConfig.loadProperties(); }
+		catch(Exception e)
+		{
+			String msg = "Failed to load " + ModID + " mod config: " + e.getMessage();
+			throw new RuntimeException(msg);
+		}
 		
 		//register blocks and items
 		LogicGatesBlocks.registerAll();

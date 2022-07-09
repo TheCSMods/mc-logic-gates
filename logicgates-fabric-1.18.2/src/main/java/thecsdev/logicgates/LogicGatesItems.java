@@ -1,17 +1,33 @@
 package thecsdev.logicgates;
 
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_CLOCK;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_PULSE_EXTENDER;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LATCH_DATA;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LATCH_SETRESET;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_AND;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_NAND;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_NOR;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_NOT;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_OR;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_WIRE;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_WIRE_TURN;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_XNOR;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_XOR;
+
 import net.minecraft.util.registry.Registry;
-import thecsdev.logicgates.item.LatchDataItem;
-import thecsdev.logicgates.item.LatchSetResetItem;
-import thecsdev.logicgates.item.LogicGateAndItem;
-import thecsdev.logicgates.item.LogicGateExclusiveNotOrItem;
-import thecsdev.logicgates.item.LogicGateExclusiveOrItem;
-import thecsdev.logicgates.item.LogicGateNotAndItem;
-import thecsdev.logicgates.item.LogicGateNotItem;
-import thecsdev.logicgates.item.LogicGateNotOrItem;
-import thecsdev.logicgates.item.LogicGateOrItem;
-import thecsdev.logicgates.item.LogicGateWireItem;
-import thecsdev.logicgates.item.LogicGateWireTurnItem;
+import thecsdev.logicgates.item.clocks.ClockItem;
+import thecsdev.logicgates.item.clocks.PulseExtenderItem;
+import thecsdev.logicgates.item.gates.LogicGateAndItem;
+import thecsdev.logicgates.item.gates.LogicGateExclusiveNotOrItem;
+import thecsdev.logicgates.item.gates.LogicGateExclusiveOrItem;
+import thecsdev.logicgates.item.gates.LogicGateNotAndItem;
+import thecsdev.logicgates.item.gates.LogicGateNotItem;
+import thecsdev.logicgates.item.gates.LogicGateNotOrItem;
+import thecsdev.logicgates.item.gates.LogicGateOrItem;
+import thecsdev.logicgates.item.gates.LogicGateWireItem;
+import thecsdev.logicgates.item.gates.LogicGateWireTurnItem;
+import thecsdev.logicgates.item.latches.LatchDataItem;
+import thecsdev.logicgates.item.latches.LatchSetResetItem;
 
 /**
  * Holds all of the blocks from logic gates.
@@ -19,35 +35,93 @@ import thecsdev.logicgates.item.LogicGateWireTurnItem;
 public class LogicGatesItems
 {
 	// ==================================================
-	public static final LogicGateWireItem LOGIC_GATE_WIRE = new LogicGateWireItem();
-	public static final LogicGateWireTurnItem LOGIC_GATE_WIRE_TURN = new LogicGateWireTurnItem();
+	public static LogicGateWireItem LOGIC_GATE_WIRE;
+	public static LogicGateWireTurnItem LOGIC_GATE_WIRE_TURN;
 	
-	public static final LogicGateAndItem LOGIC_GATE_AND = new LogicGateAndItem();
-	public static final LogicGateOrItem LOGIC_GATE_OR = new LogicGateOrItem();
-	public static final LogicGateExclusiveOrItem LOGIC_GATE_XOR = new LogicGateExclusiveOrItem();
-	public static final LogicGateNotItem LOGIC_GATE_NOT = new LogicGateNotItem();
-	public static final LogicGateNotAndItem LOGIC_GATE_NAND = new LogicGateNotAndItem();
-	public static final LogicGateNotOrItem LOGIC_GATE_NOR = new LogicGateNotOrItem();
-	public static final LogicGateExclusiveNotOrItem LOGIC_GATE_XNOR = new LogicGateExclusiveNotOrItem();
+	public static LogicGateAndItem LOGIC_GATE_AND;
+	public static LogicGateOrItem LOGIC_GATE_OR;
+	public static LogicGateExclusiveOrItem LOGIC_GATE_XOR;
+	public static LogicGateNotItem LOGIC_GATE_NOT;
+	public static LogicGateNotAndItem LOGIC_GATE_NAND;
+	public static LogicGateNotOrItem LOGIC_GATE_NOR;
+	public static LogicGateExclusiveNotOrItem LOGIC_GATE_XNOR;
 	
-	public static final LatchSetResetItem LATCH_SETRESET = new LatchSetResetItem();
-	public static final LatchDataItem LATCH_DATA = new LatchDataItem();
+	public static LatchSetResetItem LATCH_SETRESET;
+	public static LatchDataItem LATCH_DATA;
+	
+	public static ClockItem CLOCK;
+	public static PulseExtenderItem PULSE_EXTENDER;
 	// ==================================================
 	static void registerAll()
 	{
-		Registry.register(Registry.ITEM, LOGIC_GATE_WIRE.getIdentifier(), LOGIC_GATE_WIRE);
-		Registry.register(Registry.ITEM, LOGIC_GATE_WIRE_TURN.getIdentifier(), LOGIC_GATE_WIRE_TURN);
+		if(ENABLE_LOGIC_GATE_WIRE)
+		{
+			LOGIC_GATE_WIRE = new LogicGateWireItem();
+			Registry.register(Registry.ITEM, LOGIC_GATE_WIRE.getIdentifier(), LOGIC_GATE_WIRE);
+		}
+		if(ENABLE_LOGIC_GATE_WIRE_TURN)
+		{
+			LOGIC_GATE_WIRE_TURN = new LogicGateWireTurnItem();
+			Registry.register(Registry.ITEM, LOGIC_GATE_WIRE_TURN.getIdentifier(), LOGIC_GATE_WIRE_TURN);
+		}
 		
-		Registry.register(Registry.ITEM, LOGIC_GATE_AND.getIdentifier(), LOGIC_GATE_AND);
-		Registry.register(Registry.ITEM, LOGIC_GATE_OR.getIdentifier(), LOGIC_GATE_OR);
-		Registry.register(Registry.ITEM, LOGIC_GATE_XOR.getIdentifier(), LOGIC_GATE_XOR);
-		Registry.register(Registry.ITEM, LOGIC_GATE_NOT.getIdentifier(), LOGIC_GATE_NOT);
-		Registry.register(Registry.ITEM, LOGIC_GATE_NAND.getIdentifier(), LOGIC_GATE_NAND);
-		Registry.register(Registry.ITEM, LOGIC_GATE_NOR.getIdentifier(), LOGIC_GATE_NOR);
-		Registry.register(Registry.ITEM, LOGIC_GATE_XNOR.getIdentifier(), LOGIC_GATE_XNOR);
+		if(ENABLE_LOGIC_GATE_AND)
+		{
+			LOGIC_GATE_AND = new LogicGateAndItem();
+			Registry.register(Registry.ITEM, LOGIC_GATE_AND.getIdentifier(), LOGIC_GATE_AND);
+		}
+		if(ENABLE_LOGIC_GATE_OR)
+		{
+			LOGIC_GATE_OR = new LogicGateOrItem();
+			Registry.register(Registry.ITEM, LOGIC_GATE_OR.getIdentifier(), LOGIC_GATE_OR);
+		}
+		if(ENABLE_LOGIC_GATE_XOR)
+		{
+			LOGIC_GATE_XOR = new LogicGateExclusiveOrItem();
+			Registry.register(Registry.ITEM, LOGIC_GATE_XOR.getIdentifier(), LOGIC_GATE_XOR);
+		}
+		if(ENABLE_LOGIC_GATE_NOT)
+		{
+			LOGIC_GATE_NOT = new LogicGateNotItem();
+			Registry.register(Registry.ITEM, LOGIC_GATE_NOT.getIdentifier(), LOGIC_GATE_NOT);
+		}
+		if(ENABLE_LOGIC_GATE_NAND)
+		{
+			LOGIC_GATE_NAND = new LogicGateNotAndItem();
+			Registry.register(Registry.ITEM, LOGIC_GATE_NAND.getIdentifier(), LOGIC_GATE_NAND);
+		}
+		if(ENABLE_LOGIC_GATE_NOR)
+		{
+			LOGIC_GATE_NOR = new LogicGateNotOrItem();
+			Registry.register(Registry.ITEM, LOGIC_GATE_NOR.getIdentifier(), LOGIC_GATE_NOR);
+		}
+		if(ENABLE_LOGIC_GATE_XNOR)
+		{
+			LOGIC_GATE_XNOR = new LogicGateExclusiveNotOrItem();
+			Registry.register(Registry.ITEM, LOGIC_GATE_XNOR.getIdentifier(), LOGIC_GATE_XNOR);
+		}
 		
-		Registry.register(Registry.ITEM, LATCH_SETRESET.getIdentifier(), LATCH_SETRESET);
-		Registry.register(Registry.ITEM, LATCH_DATA.getIdentifier(), LATCH_DATA);
+		if(ENABLE_LATCH_SETRESET)
+		{
+			LATCH_SETRESET = new LatchSetResetItem();
+			Registry.register(Registry.ITEM, LATCH_SETRESET.getIdentifier(), LATCH_SETRESET);
+		}
+		if(ENABLE_LATCH_DATA)
+		{
+			LATCH_DATA = new LatchDataItem();
+			Registry.register(Registry.ITEM, LATCH_DATA.getIdentifier(), LATCH_DATA);
+		}
+		
+		if(ENABLE_CLOCK)
+		{
+			CLOCK = new ClockItem();
+			Registry.register(Registry.ITEM, CLOCK.getIdentifier(), CLOCK);
+		}
+		if(ENABLE_PULSE_EXTENDER)
+		{
+			PULSE_EXTENDER = new PulseExtenderItem();
+			Registry.register(Registry.ITEM, PULSE_EXTENDER.getIdentifier(), PULSE_EXTENDER);
+		}
 	}
 	// ==================================================
 }

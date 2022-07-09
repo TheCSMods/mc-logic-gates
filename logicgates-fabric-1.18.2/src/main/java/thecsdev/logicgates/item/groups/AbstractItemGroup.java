@@ -2,6 +2,7 @@ package thecsdev.logicgates.item.groups;
 
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import thecsdev.logicgates.LogicGates;
 import thecsdev.logicgates.LogicGatesItems;
@@ -15,7 +16,12 @@ public abstract class AbstractItemGroup
 	{
 		Group = FabricItemGroupBuilder
 				.create(getIdentifier())
-				.icon(() -> LogicGatesItems.LOGIC_GATE_AND.getDefaultStack())
+				.icon(() ->
+				{
+					if(LogicGatesItems.LOGIC_GATE_AND != null)
+						return LogicGatesItems.LOGIC_GATE_AND.getDefaultStack();
+					else return Items.REDSTONE_TORCH.getDefaultStack();
+				})
 				.build();
 	}
 	// --------------------------------------------------

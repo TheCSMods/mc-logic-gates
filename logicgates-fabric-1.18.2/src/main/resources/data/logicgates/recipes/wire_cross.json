@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        " R ",
+        "R#R",
+        " R "
+    ],
+    "key":
+    {
+        "#": { "item": "minecraft:stone" },
+        "R": { "item": "logicgates:wire" }
+    },
+    "result":
+    {
+        "item": "logicgates:wire_cross",
+        "count": 1
+    }
+}

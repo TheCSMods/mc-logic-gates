@@ -11,6 +11,7 @@ import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_OR;
 import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_WIRE;
 import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_WIRE_T;
 import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_WIRE_TURN;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_WIRE_CROSS;
 import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_XNOR;
 import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_XOR;
 import static thecsdev.logicgates.LogicGatesConfig.ENABLE_PULSE_EXTENDER;
@@ -27,6 +28,7 @@ import thecsdev.logicgates.item.gates.LogicGateNotOrItem;
 import thecsdev.logicgates.item.gates.LogicGateOrItem;
 import thecsdev.logicgates.item.latches.LatchDataItem;
 import thecsdev.logicgates.item.latches.LatchSetResetItem;
+import thecsdev.logicgates.item.wires.LogicGateCrossWireItem;
 import thecsdev.logicgates.item.wires.LogicGateTWireItem;
 import thecsdev.logicgates.item.wires.LogicGateWireItem;
 import thecsdev.logicgates.item.wires.LogicGateWireTurnItem;
@@ -39,7 +41,8 @@ public class LogicGatesItems
 	// ==================================================
 	public static LogicGateWireItem LOGIC_GATE_WIRE;
 	public static LogicGateWireTurnItem LOGIC_GATE_WIRE_TURN;
-	public static LogicGateTWireItem LOGIC_GATE_TWIRE;
+	public static LogicGateTWireItem LOGIC_GATE_WIRE_T;
+	public static LogicGateCrossWireItem LOGIC_GATE_WIRE_CROSS;
 	
 	public static LogicGateAndItem LOGIC_GATE_AND;
 	public static LogicGateOrItem LOGIC_GATE_OR;
@@ -70,8 +73,13 @@ public class LogicGatesItems
 		}
 		if(ENABLE_LOGIC_GATE_WIRE_T)
 		{
-			LOGIC_GATE_TWIRE = new LogicGateTWireItem();
-			Registry.register(Registry.ITEM, LOGIC_GATE_TWIRE.getIdentifier(), LOGIC_GATE_TWIRE);
+			LOGIC_GATE_WIRE_T = new LogicGateTWireItem();
+			Registry.register(Registry.ITEM, LOGIC_GATE_WIRE_T.getIdentifier(), LOGIC_GATE_WIRE_T);
+		}
+		if(ENABLE_LOGIC_GATE_WIRE_CROSS)
+		{
+			LOGIC_GATE_WIRE_CROSS = new LogicGateCrossWireItem();
+			Registry.register(Registry.ITEM, LOGIC_GATE_WIRE_CROSS.getIdentifier(), LOGIC_GATE_WIRE_CROSS);
 		}
 		
 		//LOGIC GATES

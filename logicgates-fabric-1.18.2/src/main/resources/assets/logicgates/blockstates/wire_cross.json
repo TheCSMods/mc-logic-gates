@@ -1,0 +1,14 @@
+{
+	"variants":
+	{
+		"facing=east,swapped_direction=false": { "model": "logicgates:block/wire_cross/wire_cross", "y": 270 },
+		"facing=west,swapped_direction=false": { "model": "logicgates:block/wire_cross/wire_cross", "y": 90 },
+		"facing=north,swapped_direction=false": { "model": "logicgates:block/wire_cross/wire_cross", "y": 180 },
+		"facing=south,swapped_direction=false": { "model": "logicgates:block/wire_cross/wire_cross", "y": 0 },
+		
+		"facing=east,swapped_direction=true": { "model": "logicgates:block/wire_cross/wire_cross_swapped", "y": 270 },
+		"facing=west,swapped_direction=true": { "model": "logicgates:block/wire_cross/wire_cross_swapped", "y": 90 },
+		"facing=north,swapped_direction=true": { "model": "logicgates:block/wire_cross/wire_cross_swapped", "y": 180 },
+		"facing=south,swapped_direction=true": { "model": "logicgates:block/wire_cross/wire_cross_swapped", "y": 0 }
+	}
+}

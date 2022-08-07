@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * All the properties in the config are READ-ONLY.
  * Modifying them while the game is running will have no effect.
@@ -18,6 +20,7 @@ public final class LogicGatesConfig
 	
 	public static boolean ENABLE_LOGIC_GATE_WIRE = true;
 	public static boolean ENABLE_LOGIC_GATE_WIRE_TURN = true;
+	public static boolean ENABLE_LOGIC_GATE_WIRE_T = true;
 	
 	public static boolean ENABLE_LOGIC_GATE_AND = true;
 	public static boolean ENABLE_LOGIC_GATE_OR = true;
@@ -65,6 +68,7 @@ public final class LogicGatesConfig
 		//paste data onto the variables
 		ENABLE_LOGIC_GATE_WIRE = smartBool(PROPERTIES.getProperty("ENABLE_LOGIC_GATE_WIRE"));
 		ENABLE_LOGIC_GATE_WIRE_TURN = smartBool(PROPERTIES.getProperty("ENABLE_LOGIC_GATE_WIRE_TURN"));
+		ENABLE_LOGIC_GATE_WIRE_T = smartBool(PROPERTIES.getProperty("ENABLE_LOGIC_GATE_WIRE_T"));
 		
 		ENABLE_LOGIC_GATE_AND = smartBool(PROPERTIES.getProperty("ENABLE_LOGIC_GATE_AND"));
 		ENABLE_LOGIC_GATE_OR = smartBool(PROPERTIES.getProperty("ENABLE_LOGIC_GATE_OR"));
@@ -88,7 +92,7 @@ public final class LogicGatesConfig
 	private static boolean smartBool(String arg0) { return smartBool(arg0, true); }
 	private static boolean smartBool(String arg0, boolean def)
 	{
-		if(arg0 == null) return def;
+		if(StringUtils.isBlank(arg0)) return def;
 		String a = arg0.split(" ")[0].toLowerCase();
 		return (a.startsWith("true") || a.startsWith("ye") ||
 				a.startsWith("ok") || a.startsWith("sur")) && a.length() <= 5;

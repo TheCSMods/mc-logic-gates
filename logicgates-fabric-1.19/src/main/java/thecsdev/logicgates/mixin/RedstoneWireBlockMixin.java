@@ -9,6 +9,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.RedstoneWireBlock;
 import net.minecraft.util.math.Direction;
 import thecsdev.logicgates.block.AbstractLogicGateBlock;
+import thecsdev.logicgates.block.AbstractMultiIOGateBlock;
 
 /**
  * This mixin is used to tell redstone wires
@@ -22,10 +23,31 @@ public abstract class RedstoneWireBlockMixin
 			at = @At("HEAD"), cancellable = true, remap = true)
 	private static void connectsTo_tcd_mixin(BlockState state, Direction dir, CallbackInfoReturnable<Boolean> e)
 	{
+		//check for block type
+		if(!(state.getBlock() instanceof AbstractLogicGateBlock) &&
+				!(state.getBlock() instanceof AbstractMultiIOGateBlock))
+			return;
+		
+		//check for null direction
+		if(dir == null)
+		{
+			e.setReturnValue(false);
+			e.cancel();
+			return;
+		}
+		
 		if(state.getBlock() instanceof AbstractLogicGateBlock)
 		{
+			
 			AbstractLogicGateBlock algb = (AbstractLogicGateBlock)state.getBlock();
 			e.setReturnValue(algb.dustConnectsToThis(state, dir));
+			e.cancel();
+			return;
+		}
+		else if(state.getBlock() instanceof AbstractMultiIOGateBlock)
+		{
+			AbstractMultiIOGateBlock amiogb = (AbstractMultiIOGateBlock)state.getBlock();
+			e.setReturnValue(amiogb.dustConnectsToThis(state, dir));
 			e.cancel();
 			return;
 		}

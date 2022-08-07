@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "R#R",
+        " T "
+    ],
+    "key":
+    {
+        "#": { "item": "minecraft:stone" },
+        "R": { "item": "logicgates:wire" },
+        "T": { "item": "minecraft:redstone_dust" }
+    },
+    "result":
+    {
+        "item": "logicgates:wire_t",
+        "count": 1
+    }
+}

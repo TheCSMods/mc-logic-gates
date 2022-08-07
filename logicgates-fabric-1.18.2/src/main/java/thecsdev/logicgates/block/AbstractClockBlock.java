@@ -24,6 +24,11 @@ public abstract class AbstractClockBlock extends AbstractLogicGateBlock
 	// ==================================================
 	public static final IntProperty CLOCK_DELAY = IntProperty.of("logicgates_clock_delay", 1, 10);
 	// ==================================================
+	public AbstractClockBlock()
+	{
+		setDefaultState(getDefaultState().with(CLOCK_DELAY, 1));
+	}
+	// ==================================================
 	@Override
 	public abstract void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random);
 	

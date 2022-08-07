@@ -10,10 +10,11 @@ import thecsdev.logicgates.block.gates.LogicGateNotAndBlock;
 import thecsdev.logicgates.block.gates.LogicGateNotBlock;
 import thecsdev.logicgates.block.gates.LogicGateNotOrBlock;
 import thecsdev.logicgates.block.gates.LogicGateOrBlock;
-import thecsdev.logicgates.block.gates.LogicGateWireBlock;
-import thecsdev.logicgates.block.gates.LogicGateWireTurnBlock;
 import thecsdev.logicgates.block.latches.LatchDataBlock;
 import thecsdev.logicgates.block.latches.LatchSetResetBlock;
+import thecsdev.logicgates.block.wires.LogicGateTWireBlock;
+import thecsdev.logicgates.block.wires.LogicGateWireBlock;
+import thecsdev.logicgates.block.wires.LogicGateWireTurnBlock;
 
 /**
  * Holds all of the blocks from logic gates.
@@ -23,6 +24,7 @@ public class LogicGatesBlocks
 	// ==================================================
 	public static final LogicGateWireBlock LOGIC_GATE_WIRE = new LogicGateWireBlock();
 	public static final LogicGateWireTurnBlock LOGIC_GATE_WIRE_TURN = new LogicGateWireTurnBlock();
+	public static final LogicGateTWireBlock LOGIC_GATE_TWIRE = new LogicGateTWireBlock();
 	
 	public static final LogicGateAndBlock LOGIC_GATE_AND = new LogicGateAndBlock();
 	public static final LogicGateOrBlock LOGIC_GATE_OR = new LogicGateOrBlock();
@@ -42,6 +44,7 @@ public class LogicGatesBlocks
 	{
 		Registry.register(Registry.BLOCK, LOGIC_GATE_WIRE.getIdentifier(), LOGIC_GATE_WIRE);
 		Registry.register(Registry.BLOCK, LOGIC_GATE_WIRE_TURN.getIdentifier(), LOGIC_GATE_WIRE_TURN);
+		Registry.register(Registry.BLOCK, LOGIC_GATE_TWIRE.getIdentifier(), LOGIC_GATE_TWIRE);
 		
 		Registry.register(Registry.BLOCK, LOGIC_GATE_AND.getIdentifier(), LOGIC_GATE_AND);
 		Registry.register(Registry.BLOCK, LOGIC_GATE_OR.getIdentifier(), LOGIC_GATE_OR);

@@ -10,6 +10,7 @@ import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_NOR;
 import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_NOT;
 import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_OR;
 import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_WIRE;
+import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_WIRE_T;
 import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_WIRE_TURN;
 import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_XNOR;
 import static thecsdev.logicgates.LogicGatesConfig.ENABLE_LOGIC_GATE_XOR;
@@ -24,10 +25,11 @@ import thecsdev.logicgates.item.gates.LogicGateNotAndItem;
 import thecsdev.logicgates.item.gates.LogicGateNotItem;
 import thecsdev.logicgates.item.gates.LogicGateNotOrItem;
 import thecsdev.logicgates.item.gates.LogicGateOrItem;
-import thecsdev.logicgates.item.gates.LogicGateWireItem;
-import thecsdev.logicgates.item.gates.LogicGateWireTurnItem;
 import thecsdev.logicgates.item.latches.LatchDataItem;
 import thecsdev.logicgates.item.latches.LatchSetResetItem;
+import thecsdev.logicgates.item.wires.LogicGateTWireItem;
+import thecsdev.logicgates.item.wires.LogicGateWireItem;
+import thecsdev.logicgates.item.wires.LogicGateWireTurnItem;
 
 /**
  * Holds all of the blocks from logic gates.
@@ -37,6 +39,7 @@ public class LogicGatesItems
 	// ==================================================
 	public static LogicGateWireItem LOGIC_GATE_WIRE;
 	public static LogicGateWireTurnItem LOGIC_GATE_WIRE_TURN;
+	public static LogicGateTWireItem LOGIC_GATE_TWIRE;
 	
 	public static LogicGateAndItem LOGIC_GATE_AND;
 	public static LogicGateOrItem LOGIC_GATE_OR;
@@ -54,6 +57,7 @@ public class LogicGatesItems
 	// ==================================================
 	static void registerAll()
 	{
+		//WIRES
 		if(ENABLE_LOGIC_GATE_WIRE)
 		{
 			LOGIC_GATE_WIRE = new LogicGateWireItem();
@@ -64,7 +68,13 @@ public class LogicGatesItems
 			LOGIC_GATE_WIRE_TURN = new LogicGateWireTurnItem();
 			Registry.register(Registry.ITEM, LOGIC_GATE_WIRE_TURN.getIdentifier(), LOGIC_GATE_WIRE_TURN);
 		}
+		if(ENABLE_LOGIC_GATE_WIRE_T)
+		{
+			LOGIC_GATE_TWIRE = new LogicGateTWireItem();
+			Registry.register(Registry.ITEM, LOGIC_GATE_TWIRE.getIdentifier(), LOGIC_GATE_TWIRE);
+		}
 		
+		//LOGIC GATES
 		if(ENABLE_LOGIC_GATE_AND)
 		{
 			LOGIC_GATE_AND = new LogicGateAndItem();
@@ -101,6 +111,7 @@ public class LogicGatesItems
 			Registry.register(Registry.ITEM, LOGIC_GATE_XNOR.getIdentifier(), LOGIC_GATE_XNOR);
 		}
 		
+		//LATCHES
 		if(ENABLE_LATCH_SETRESET)
 		{
 			LATCH_SETRESET = new LatchSetResetItem();
@@ -112,6 +123,7 @@ public class LogicGatesItems
 			Registry.register(Registry.ITEM, LATCH_DATA.getIdentifier(), LATCH_DATA);
 		}
 		
+		//CLOCKS
 		if(ENABLE_CLOCK)
 		{
 			CLOCK = new ClockItem();

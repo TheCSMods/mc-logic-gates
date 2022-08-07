@@ -3,7 +3,7 @@
 	"minVersion": "0.8",
 	"package": "thecsdev.logicgates.mixin",
 	"compatibilityLevel": "JAVA_17",
-	"mixins": ["RedstoneWireBlockMixin", "GameRulesAccessor", "GameRulesBooleanRuleAccessor"],
+	"mixins": ["RedstoneWireBlockMixin", "StateManagerBuilderMixin"],
 	"client": [],
 	"server": [],
 	"injectors": { "defaultRequire": 1 }

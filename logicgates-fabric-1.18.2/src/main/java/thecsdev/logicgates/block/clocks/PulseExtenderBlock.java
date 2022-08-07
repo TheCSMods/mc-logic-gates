@@ -14,10 +14,16 @@ import thecsdev.logicgates.block.AbstractClockBlock;
 
 public final class PulseExtenderBlock extends AbstractClockBlock
 {
+	// ==================================================
 	public static final IntProperty EXT_PULSE = IntProperty.of("logicgates_extended_pulse", 0, 10);
-	
+	// ==================================================
+	public PulseExtenderBlock()
+	{
+		setDefaultState(getDefaultState().with(EXT_PULSE, 0));
+	}
+	// --------------------------------------------------
 	@Override public String getBlockIdPath() { return "pulse_extender"; }
-	
+	// ==================================================
 	@Override
 	public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random)
 	{
@@ -35,7 +41,7 @@ public final class PulseExtenderBlock extends AbstractClockBlock
 		}
 		updateNeighbors((World)world, pos, state);
 	}
-	
+	// --------------------------------------------------
 	@Override
 	public BlockState getPlacementState(ItemPlacementContext ctx)
 	{
@@ -44,14 +50,15 @@ public final class PulseExtenderBlock extends AbstractClockBlock
 		state = state.with(EXT_PULSE, 0);
 		return state;
 	}
-	
+	// --------------------------------------------------
 	@Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager)
 	{
 		super.appendProperties(stateManager);
 		stateManager.add(EXT_PULSE);
     }
-	
+	// --------------------------------------------------
 	@Override
 	public int getTickDelayFromDelay(int cd) { return 5 * cd; }
+	// ==================================================
 }

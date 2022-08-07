@@ -1,5 +1,7 @@
 package thecsdev.logicgates.block;
 
+import org.jetbrains.annotations.Nullable;
+
 import net.minecraft.block.AbstractRedstoneGateBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -18,7 +20,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import thecsdev.logicgates.LogicGates;
-import thecsdev.logicgates.block.gates.LogicGateWireTurnBlock;
+import thecsdev.logicgates.block.wires.LogicGateWireTurnBlock;
 
 /**
  * An abstract class for all logic gate blocks.
@@ -26,20 +28,23 @@ import thecsdev.logicgates.block.gates.LogicGateWireTurnBlock;
 public abstract class AbstractLogicGateBlock extends AbstractRedstoneGateBlock
 {
 	// ==================================================
-	private static final Settings SETTINGS = Settings.copy(Blocks.REPEATER);
-	private static final VoxelShape SHAPE = Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D);
+	static final Settings SETTINGS = Settings.copy(Blocks.REPEATER);
+	static final VoxelShape SHAPE = Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D);
 	// --------------------------------------------------
 	public static final BooleanProperty POWERED = Properties.POWERED;
 	public static final BooleanProperty SWAPPED_DIR = BooleanProperty.of("swapped_direction");
 	// ==================================================
 	protected AbstractLogicGateBlock()
 	{
+		//super
 		super(SETTINGS);
 		
+		//rendering
 		//i don't feel like dealing with sides, so i'm just gonna catch
 		try { net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap.INSTANCE.putBlock(this, RenderLayer.getCutout()); }
 		catch(Throwable e) {}
 		
+		//default states
 		setDefaultState(getDefaultState().with(POWERED, false));
 		if(supportsSideDirection())
 			setDefaultState(getDefaultState().with(SWAPPED_DIR, false));
@@ -72,11 +77,7 @@ public abstract class AbstractLogicGateBlock extends AbstractRedstoneGateBlock
 	}
 	// ==================================================
 	@Override
-	protected boolean hasPower(World world, BlockPos pos, BlockState state)
-	{
-	    //return (getPower(world, pos, state) > 0);
-		return gateConditionsMet(state, world, pos);
-	}
+	protected boolean hasPower(World world, BlockPos pos, BlockState state) { return gateConditionsMet(state, world, pos); }
 	// --------------------------------------------------
 	@Override
 	protected int getInputLevel(WorldView world, BlockPos pos, Direction dir)
@@ -88,6 +89,7 @@ public abstract class AbstractLogicGateBlock extends AbstractRedstoneGateBlock
 		return Math.max(super.getInputLevel(world, pos, dir), a ? 15 : 0);
 	}
 	// --------------------------------------------------
+	@Nullable
 	public Direction getGateSideDir(BlockState state)
 	{
 		//get direction
@@ -123,7 +125,7 @@ public abstract class AbstractLogicGateBlock extends AbstractRedstoneGateBlock
 	public boolean dustConnectsToThis(BlockState state, Direction dir)
 	{
 		//get gate state dir
-		Direction face_front = state.get(AbstractLogicGateBlock.FACING);
+		Direction face_front = state.get(FACING);
 		Direction face_side = getGateSideDir(state);
 		
 		//check front and back, and check side direction
@@ -139,7 +141,7 @@ public abstract class AbstractLogicGateBlock extends AbstractRedstoneGateBlock
 	/**
 	 * Returns this block's Identifier. See also {@link #getBlockIdPath()}.
 	 */
-	public final Identifier getIdentifier() { return new Identifier(LogicGates.ModID, getBlockIdPath()); }
+	public Identifier getIdentifier() { return new Identifier(LogicGates.ModID, getBlockIdPath()); }
 	
 	/**
 	 * Returns the block identifier path.<br/>

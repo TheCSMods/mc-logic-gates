@@ -2,7 +2,8 @@
 	"itemGroup.logicgates.itemgroup": "Logic Gates",
 	
 	"block.logicgates.wire": "Logic gate wire",
-	"block.logicgates.wire_turn": "Logic gate wire turn",
+	"block.logicgates.wire_t": "Logic gate T wire",
+	"block.logicgates.wire_turn": "Logic gate turn wire",
 	
 	"block.logicgates.and_gate": "And gate",
 	"block.logicgates.or_gate": "Or gate",

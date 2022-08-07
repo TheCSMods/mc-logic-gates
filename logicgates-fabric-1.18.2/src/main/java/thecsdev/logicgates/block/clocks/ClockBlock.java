@@ -10,8 +10,9 @@ import thecsdev.logicgates.block.AbstractClockBlock;
 
 public final class ClockBlock extends AbstractClockBlock
 {
+	// ==================================================
 	@Override public String getBlockIdPath() { return "clock"; }
-	
+	// ==================================================
 	@Override
 	public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random)
 	{
@@ -27,4 +28,5 @@ public final class ClockBlock extends AbstractClockBlock
 		}
 		updateNeighbors((World)world, pos, state);
 	}
+	// ==================================================
 }

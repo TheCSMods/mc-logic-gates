@@ -34,8 +34,8 @@ public class LogicGates implements ModInitializer
 		}
 		
 		//register blocks and items
-		LogicGatesBlocks.registerAll();
-		LogicGatesItems.registerAll();
+		LogicGatesBlocks.registerAll(); //first blocks
+		LogicGatesItems.registerAll();  //then items
 	}
 	// --------------------------------------------------
 	public static String getModID() { return ModID; }

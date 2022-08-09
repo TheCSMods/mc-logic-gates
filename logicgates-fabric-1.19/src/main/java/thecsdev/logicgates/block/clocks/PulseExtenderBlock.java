@@ -21,16 +21,16 @@ public final class PulseExtenderBlock extends AbstractClockBlock
 	public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random)
 	{
 		if(hasPower(world, pos, state))
-			world.setBlockState(pos, state.with(POWERED, true).with(EXT_PULSE, state.get(CLOCK_DELAY)), 2);
+			world.setBlockState(pos, state.with(POWERED, true).with(EXT_PULSE, state.get(CLOCK_DELAY)), NOTIFY_LISTENERS);
 		else
 		{
 			int extPulse = state.get(EXT_PULSE);
 			if(extPulse > 0)
 			{
-				world.setBlockState(pos, state.with(POWERED, true).with(EXT_PULSE, Math.max(extPulse - 1, 0)), 2);
+				world.setBlockState(pos, state.with(POWERED, true).with(EXT_PULSE, Math.max(extPulse - 1, 0)), NOTIFY_LISTENERS);
 				scheduleTick(world, pos, getTickDelayFromDelay(1));
 			}
-			else world.setBlockState(pos, state.with(POWERED, false), 2);
+			else world.setBlockState(pos, state.with(POWERED, false), NOTIFY_LISTENERS);
 		}
 		updateNeighbors((World)world, pos, state);
 	}

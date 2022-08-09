@@ -44,7 +44,7 @@ public abstract class AbstractLogicSideGateBlock extends AbstractLogicGateBlock
 		//toggle swapped direction
 		state = state.cycle(SWAPPED_DIR);
 		world.playSound(player, pos, SoundEvents.BLOCK_COMPARATOR_CLICK, SoundCategory.BLOCKS, 0.3f, 1);
-		world.setBlockState(pos, state, 2);
+		world.setBlockState(pos, state, NOTIFY_LISTENERS);
 		updatePowered(world, pos, state);
 		
 		//return

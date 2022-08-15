@@ -11,13 +11,15 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalFacingBlock;
 import net.minecraft.block.RedstoneWireBlock;
 import net.minecraft.block.ShapeContext;
+import net.minecraft.block.WallMountedBlock;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.enums.WallMountLocation;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -28,10 +30,9 @@ import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import thecsdev.logicgates.LogicGates;
 
-public abstract class AbstractMultiIOGateBlock extends Block
+public abstract class AbstractMultiIOGateBlock extends HorizontalFacingBlock
 {
 	// ==================================================
-	public final static DirectionProperty FACING = HorizontalFacingBlock.FACING;
 	public final static BooleanProperty POWERED_E = BooleanProperty.of("powered_east");
 	public final static BooleanProperty POWERED_W = BooleanProperty.of("powered_west");
 	public final static BooleanProperty POWERED_N = BooleanProperty.of("powered_north");
@@ -140,8 +141,8 @@ public abstract class AbstractMultiIOGateBlock extends Block
 			return 15;
 		else if (blockState.isOf(Blocks.REDSTONE_WIRE))
 			return blockState.get(RedstoneWireBlock.POWER);
-		/*else if(blockState.isOf(Blocks.LEVER) && blockState.get(WallMountedBlock.FACE) == WallMountLocation.FLOOR)
-			return 15; -- acts weird, doesn't work. will patch later; also check for POWERED*/
+		else if(blockState.isOf(Blocks.LEVER) && blockState.get(WallMountedBlock.FACE) == WallMountLocation.FLOOR)
+			return blockState.get(Properties.POWERED) ? 15 : 0;
 		
 		//check if emits power and get strong power
 		if (blockState.emitsRedstonePower())

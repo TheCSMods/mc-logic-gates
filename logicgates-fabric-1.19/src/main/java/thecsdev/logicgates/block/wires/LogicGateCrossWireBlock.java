@@ -1,7 +1,5 @@
 package thecsdev.logicgates.block.wires;
 
-import java.util.Random;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -15,6 +13,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import thecsdev.logicgates.block.AbstractLogicGateBlock;
 import thecsdev.logicgates.block.AbstractMultiIOGateBlock;

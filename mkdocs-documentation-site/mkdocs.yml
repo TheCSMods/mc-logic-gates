@@ -35,9 +35,11 @@ nav:
     - 'Clocks':
         - 'Clock generator': 'clock.md'
         - 'Pulse extender': 'clock_pe.md'
-    - 'Other blocks':
+    - 'Wires':
         - 'Wire': 'wire.md'
-        - 'Wire turn': 'wire_turn.md'
+        - 'T Wire': 'wire_t.md'
+        - 'Turn wire': 'wire_turn.md'
+        - 'Cross wire': 'wire_cross.md'
     - 'Mod config': 'config.md'
 #    - 'Template block page': 'block_template.md'
 

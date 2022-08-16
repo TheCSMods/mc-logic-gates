@@ -1,5 +1,5 @@
 {
-	"parent": "logicgates:block/wire_t",
+	"parent": "logicgates:block/wire_t/wire_t_off",
 	"display":
 	{
 		"thirdperson_righthand":

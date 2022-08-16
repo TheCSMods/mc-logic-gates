@@ -62,7 +62,7 @@ public abstract class AbstractMultiIOGateBlock extends HorizontalFacingBlock
 	protected void scheduleTick(WorldAccess world, BlockPos pos, int delay)
 	{
 	    if (!world.isClient() && !world.getBlockTickScheduler().isQueued(pos, this))
-	    	world.createAndScheduleBlockTick(pos, this, Math.max(delay, 2));
+	    	world.createAndScheduleBlockTick(pos, this, Math.max(delay, 1));
 	}
 	// --------------------------------------------------
 	@Override
@@ -88,7 +88,7 @@ public abstract class AbstractMultiIOGateBlock extends HorizontalFacingBlock
 	}
 	
 	/** Schedule a tick to update the POWERED properties */
-	protected void updatePowered(World world, BlockPos pos, BlockState state) { scheduleTick(world, pos, 2); }
+	protected void updatePowered(World world, BlockPos pos, BlockState state) { scheduleTick(world, pos, 1); }
 	
 	@Override
 	public abstract void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random);
@@ -141,7 +141,9 @@ public abstract class AbstractMultiIOGateBlock extends HorizontalFacingBlock
 			return 15;
 		else if (blockState.isOf(Blocks.REDSTONE_WIRE))
 			return blockState.get(RedstoneWireBlock.POWER);
-		else if(blockState.isOf(Blocks.LEVER) && blockState.get(WallMountedBlock.FACE) == WallMountLocation.FLOOR)
+		else if(blockState.getProperties().contains(WallMountedBlock.FACE) &&
+				blockState.getProperties().contains(Properties.POWERED) &&
+				blockState.get(WallMountedBlock.FACE) == WallMountLocation.FLOOR)
 			return blockState.get(Properties.POWERED) ? 15 : 0;
 		
 		//check if emits power and get strong power

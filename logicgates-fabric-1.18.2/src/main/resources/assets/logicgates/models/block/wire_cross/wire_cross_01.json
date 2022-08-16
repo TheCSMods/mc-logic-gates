@@ -2,6 +2,6 @@
 	"parent":"logicgates:block/gate_base",
 	"textures":
 	{
-		"overlay": "logicgates:block/wire_cross/wire_cross_swapped"
+		"overlay": "logicgates:block/wire_cross/wire_cross_01"
 	}
 }

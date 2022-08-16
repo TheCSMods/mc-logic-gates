@@ -1,5 +1,5 @@
 {
-	"parent": "logicgates:block/wire_cross/wire_cross",
+	"parent": "logicgates:block/wire_cross/wire_cross_00",
 	"display":
 	{
 		"thirdperson_righthand":

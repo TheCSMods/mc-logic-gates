@@ -27,7 +27,7 @@ public class LogicGateTWireBlock extends AbstractMultiIOGateBlock
     }
 	// ==================================================
 	@Override
-	public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random)
+	public void onScheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random)
 	{
 		Direction facing = state.get(FACING);
 		boolean inputPowered = getInputLevel(world, pos.offset(facing), facing) > 0;

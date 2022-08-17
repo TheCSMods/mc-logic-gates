@@ -62,7 +62,7 @@ public abstract class AbstractMultiIOGateBlock extends HorizontalFacingBlock
 	protected void scheduleTick(WorldAccess world, BlockPos pos, int delay)
 	{
 	    if (!world.isClient() && !world.getBlockTickScheduler().isQueued(pos, this))
-	    	world.createAndScheduleBlockTick(pos, this, Math.max(delay, 1));
+	    	world.createAndScheduleBlockTick(pos, this, Math.max(delay, 2));
 	}
 	// --------------------------------------------------
 	@Override
@@ -88,10 +88,27 @@ public abstract class AbstractMultiIOGateBlock extends HorizontalFacingBlock
 	}
 	
 	/** Schedule a tick to update the POWERED properties */
-	protected void updatePowered(World world, BlockPos pos, BlockState state) { scheduleTick(world, pos, 1); }
+	protected final void updatePowered(World world, BlockPos pos, BlockState state) { scheduleTick(world, pos, 2); }
 	
 	@Override
-	public abstract void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random);
+	public final void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random)
+	{
+		//handle block update
+		onScheduledTick(state, world, pos, random);
+		
+		//update neighbors properly as well
+		Direction facing = state.get(FACING);
+		if(getDefaultState().getProperties().contains(POWERED_E))
+			world.updateNeighborsExcept(pos.offset(facing.rotateYCounterclockwise()), this, facing.rotateYClockwise());
+		if(getDefaultState().getProperties().contains(POWERED_W))
+			world.updateNeighborsExcept(pos.offset(facing.rotateYClockwise()), this, facing.rotateYCounterclockwise());
+		if(getDefaultState().getProperties().contains(POWERED_N))
+			world.updateNeighborsExcept(pos.offset(facing.getOpposite()), this, facing);
+		if(getDefaultState().getProperties().contains(POWERED_S))
+			world.updateNeighborsExcept(pos.offset(facing), this, facing.getOpposite());
+	}
+	
+	public abstract void onScheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random);
 	// --------------------------------------------------
 	@Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager)

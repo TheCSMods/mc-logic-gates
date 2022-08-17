@@ -61,7 +61,7 @@ public class LogicGateCrossWireBlock extends AbstractMultiIOGateBlock
 	public boolean dustConnectsToThis(BlockState state, Direction dir) { return true; }
 	// ==================================================
 	@Override
-	public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random)
+	public void onScheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random)
 	{
 		Direction facing = state.get(FACING);
 		Direction fCW = facing.rotateYClockwise();

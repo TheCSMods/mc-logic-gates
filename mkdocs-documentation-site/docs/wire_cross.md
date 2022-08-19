@@ -19,7 +19,7 @@ can be swapped, while the front input will always depend on the direction the bl
 
 ## Data values
 ### Block ID
-`logicgates:wire_t`
+`logicgates:wire_cross`
 
 ### Block states
 | Blockstate  | Values                           | Description                          |

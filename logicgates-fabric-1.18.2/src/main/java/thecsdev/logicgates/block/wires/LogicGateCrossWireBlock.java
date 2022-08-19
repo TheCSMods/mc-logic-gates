@@ -46,7 +46,7 @@ public class LogicGateCrossWireBlock extends AbstractMultiIOGateBlock
 		//toggle swapped direction
 		state = state.cycle(SWAPPED_DIR);
 		world.playSound(player, pos, SoundEvents.BLOCK_COMPARATOR_CLICK, SoundCategory.BLOCKS, 0.3f, 1);
-		world.setBlockState(pos, state, 0);
+		updateCrossState(state, world, pos, 0);
 		scheduleTick(world, pos, 2);
 		//world.updateNeighborsAlways(pos, this);
 		
@@ -63,6 +63,11 @@ public class LogicGateCrossWireBlock extends AbstractMultiIOGateBlock
 	@Override
 	public void onScheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random)
 	{
+		updateCrossState(state, world, pos, NOTIFY_ALL);
+	}
+	// --------------------------------------------------
+	private void updateCrossState(BlockState state, World world, BlockPos pos, int flags)
+	{
 		Direction facing = state.get(FACING);
 		Direction fCW = facing.rotateYClockwise();
 		Direction fCCW = facing.rotateYCounterclockwise();
@@ -75,40 +80,5 @@ public class LogicGateCrossWireBlock extends AbstractMultiIOGateBlock
 		
 		world.setBlockState(pos, newState, NOTIFY_ALL);
 	}
-	// --------------------------------------------------
-	/*@Override
-	public int getStrongRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction)
-	{
-		return state.getWeakRedstonePower(world, pos, direction);
-	}
-	
-	@Override
-	public int getWeakRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction)
-	{
-		//get required stuff
-		if(!(world instanceof WorldView)) return 0; //shouldn't happen, like... ever.
-		Direction facing = state.get(FACING);
-		WorldView worldView = (WorldView)world;
-		
-		Direction fCW = facing.rotateYClockwise();
-		Direction fCCW = facing.rotateYCounterclockwise();
-		
-		//handle cross wire
-		if(direction == facing)
-			return getInputLevel(worldView, pos.offset(direction), direction) > 0 ? 15 : 0;
-		else if(direction == fCW || direction == fCCW)
-		{
-			//not swapped (->)
-			if(!state.get(SWAPPED_DIR) && direction == fCW)
-				return getInputLevel(worldView, pos.offset(fCW), fCW) > 0 ? 15 : 0;
-				
-			//swapped (<-)
-			else if(state.get(SWAPPED_DIR) && direction == fCCW)
-				return getInputLevel(worldView, pos.offset(fCCW), fCCW) > 0 ? 15 : 0;
-		}
-		
-		//default: 0
-	    return 0;
-	}*/
 	// ==================================================
 }

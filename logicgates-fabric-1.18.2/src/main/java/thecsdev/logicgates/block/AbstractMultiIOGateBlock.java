@@ -15,7 +15,9 @@ import net.minecraft.block.WallMountedBlock;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.enums.WallMountLocation;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
@@ -123,6 +125,13 @@ public abstract class AbstractMultiIOGateBlock extends HorizontalFacingBlock
 		BlockState state = getDefaultState();
 		state = state.with(FACING, ctx.getPlayerFacing().getOpposite());
 		return state;
+	}
+	
+	@Override
+	public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack)
+	{
+		super.onPlaced(world, pos, state, placer, itemStack);
+		updatePowered(world, pos, state);
 	}
 	// --------------------------------------------------
 	public boolean emitsRedstonePower(BlockState state) { return true; }

@@ -46,7 +46,7 @@ public class LogicGateCrossWireBlock extends AbstractMultiIOGateBlock
 		state = state.cycle(SWAPPED_DIR);
 		world.playSound(player, pos, SoundEvents.BLOCK_COMPARATOR_CLICK, SoundCategory.BLOCKS, 0.3f, 1);
 		updateCrossState(state, world, pos, 0);
-		scheduleTick(world, pos, 2);
+		updatePowered(world, pos, state);
 		//world.updateNeighborsAlways(pos, this);
 		
 		//return

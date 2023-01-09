@@ -1,0 +1,7 @@
+{
+	"parent":"logicgates:block/gate_base",
+	"textures":
+	{
+		"overlay": "logicgates:block/gate_xor/gxo_left_on"
+	}
+}

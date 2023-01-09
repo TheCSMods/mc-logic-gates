@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "# #",
+        "G G",
+        "  P"
+    ],
+    "key": {
+        "#": {
+            "item": "logicgates:nor_gate"
+        },
+        "G": {
+            "item": "logicgates:and_gate"
+        },
+        "P": {
+            "item": "logicgates:not_gate"
+        }
+    },
+    "result": {
+        "item": "logicgates:data_latch",
+        "count": 6
+    }
+}

@@ -1,0 +1,7 @@
+{
+	"parent":"logicgates:block/gate_base",
+	"textures":
+	{
+		"overlay": "logicgates:block/wire_t/wire_t_on"
+	}
+}

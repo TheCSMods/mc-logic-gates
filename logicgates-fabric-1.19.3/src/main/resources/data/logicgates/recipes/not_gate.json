@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "   ",
+        "#SR",
+        "   "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:redstone"
+        },
+        "S": {
+            "item": "minecraft:stone"
+        },
+        "R": {
+            "item": "minecraft:redstone_torch"
+        }
+    },
+    "result": {
+        "item": "logicgates:not_gate",
+        "count": 1
+    }
+}

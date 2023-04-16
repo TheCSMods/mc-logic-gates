@@ -1,0 +1,22 @@
+{
+	"itemGroup.logicgates.itemgroup": "Logic Gates",
+	
+	"block.logicgates.wire": "Logic gate wire",
+	"block.logicgates.wire_t": "Logic gate T wire",
+	"block.logicgates.wire_turn": "Logic gate turn wire",
+	"block.logicgates.wire_cross": "Logic gate cross wire",
+	
+	"block.logicgates.and_gate": "And gate",
+	"block.logicgates.or_gate": "Or gate",
+	"block.logicgates.xor_gate": "Exclusive or gate",
+	"block.logicgates.not_gate": "Not gate",
+	"block.logicgates.nand_gate": "Not and gate",
+	"block.logicgates.nor_gate": "Not or gate",
+	"block.logicgates.xnor_gate": "Exclusive not or gate",
+	
+	"block.logicgates.sr_latch": "Set-Reset latch",
+	"block.logicgates.data_latch": "Data latch",
+
+	"block.logicgates.clock": "Clock generator",
+	"block.logicgates.pulse_extender": "Pulse extender"
+}

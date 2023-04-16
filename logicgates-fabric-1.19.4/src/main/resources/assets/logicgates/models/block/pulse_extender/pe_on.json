@@ -1,0 +1,7 @@
+{
+	"parent":"logicgates:block/latch_base",
+	"textures":
+	{
+		"overlay": "logicgates:block/pulse_extender/pe_on"
+	}
+}

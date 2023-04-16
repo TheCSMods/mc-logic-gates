@@ -1,0 +1,7 @@
+{
+	"parent":"logicgates:block/latch_base",
+	"textures":
+	{
+		"overlay": "logicgates:block/latch_setreset/sr_right_off"
+	}
+}

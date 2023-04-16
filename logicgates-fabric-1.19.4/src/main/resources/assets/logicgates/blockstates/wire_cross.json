@@ -1,0 +1,46 @@
+{
+	"variants":
+	{
+		"swapped_direction=false,facing=east,powered_east=false,powered_west=false,powered_north=false": { "model": "logicgates:block/wire_cross/wire_cross_00", "y": 270 },
+		"swapped_direction=false,facing=west,powered_east=false,powered_west=false,powered_north=false": { "model": "logicgates:block/wire_cross/wire_cross_00", "y": 90 },
+		"swapped_direction=false,facing=north,powered_east=false,powered_west=false,powered_north=false": { "model": "logicgates:block/wire_cross/wire_cross_00", "y": 180 },
+		"swapped_direction=false,facing=south,powered_east=false,powered_west=false,powered_north=false": { "model": "logicgates:block/wire_cross/wire_cross_00", "y": 0 },
+
+		"swapped_direction=false,facing=east,powered_east=false,powered_west=false,powered_north=true": { "model": "logicgates:block/wire_cross/wire_cross_01", "y": 270 },
+		"swapped_direction=false,facing=west,powered_east=false,powered_west=false,powered_north=true": { "model": "logicgates:block/wire_cross/wire_cross_01", "y": 90 },
+		"swapped_direction=false,facing=north,powered_east=false,powered_west=false,powered_north=true": { "model": "logicgates:block/wire_cross/wire_cross_01", "y": 180 },
+		"swapped_direction=false,facing=south,powered_east=false,powered_west=false,powered_north=true": { "model": "logicgates:block/wire_cross/wire_cross_01", "y": 0 },
+
+		"swapped_direction=false,facing=east,powered_east=true,powered_west=false,powered_north=false": { "model": "logicgates:block/wire_cross/wire_cross_10", "y": 270 },
+		"swapped_direction=false,facing=west,powered_east=true,powered_west=false,powered_north=false": { "model": "logicgates:block/wire_cross/wire_cross_10", "y": 90 },
+		"swapped_direction=false,facing=north,powered_east=true,powered_west=false,powered_north=false": { "model": "logicgates:block/wire_cross/wire_cross_10", "y": 180 },
+		"swapped_direction=false,facing=south,powered_east=true,powered_west=false,powered_north=false": { "model": "logicgates:block/wire_cross/wire_cross_10", "y": 0 },
+
+		"swapped_direction=false,facing=east,powered_east=true,powered_west=false,powered_north=true": { "model": "logicgates:block/wire_cross/wire_cross_11", "y": 270 },
+		"swapped_direction=false,facing=west,powered_east=true,powered_west=false,powered_north=true": { "model": "logicgates:block/wire_cross/wire_cross_11", "y": 90 },
+		"swapped_direction=false,facing=north,powered_east=true,powered_west=false,powered_north=true": { "model": "logicgates:block/wire_cross/wire_cross_11", "y": 180 },
+		"swapped_direction=false,facing=south,powered_east=true,powered_west=false,powered_north=true": { "model": "logicgates:block/wire_cross/wire_cross_11", "y": 0 },
+
+
+
+		"swapped_direction=true,facing=east,powered_east=false,powered_west=false,powered_north=false": { "model": "logicgates:block/wire_cross/wire_cross_s_00", "y": 270 },
+		"swapped_direction=true,facing=west,powered_east=false,powered_west=false,powered_north=false": { "model": "logicgates:block/wire_cross/wire_cross_s_00", "y": 90 },
+		"swapped_direction=true,facing=north,powered_east=false,powered_west=false,powered_north=false": { "model": "logicgates:block/wire_cross/wire_cross_s_00", "y": 180 },
+		"swapped_direction=true,facing=south,powered_east=false,powered_west=false,powered_north=false": { "model": "logicgates:block/wire_cross/wire_cross_s_00", "y": 0 },
+
+		"swapped_direction=true,facing=east,powered_east=false,powered_west=false,powered_north=true": { "model": "logicgates:block/wire_cross/wire_cross_s_01", "y": 270 },
+		"swapped_direction=true,facing=west,powered_east=false,powered_west=false,powered_north=true": { "model": "logicgates:block/wire_cross/wire_cross_s_01", "y": 90 },
+		"swapped_direction=true,facing=north,powered_east=false,powered_west=false,powered_north=true": { "model": "logicgates:block/wire_cross/wire_cross_s_01", "y": 180 },
+		"swapped_direction=true,facing=south,powered_east=false,powered_west=false,powered_north=true": { "model": "logicgates:block/wire_cross/wire_cross_s_01", "y": 0 },
+
+		"swapped_direction=true,facing=east,powered_east=false,powered_west=true,powered_north=false": { "model": "logicgates:block/wire_cross/wire_cross_s_10", "y": 270 },
+		"swapped_direction=true,facing=west,powered_east=false,powered_west=true,powered_north=false": { "model": "logicgates:block/wire_cross/wire_cross_s_10", "y": 90 },
+		"swapped_direction=true,facing=north,powered_east=false,powered_west=true,powered_north=false": { "model": "logicgates:block/wire_cross/wire_cross_s_10", "y": 180 },
+		"swapped_direction=true,facing=south,powered_east=false,powered_west=true,powered_north=false": { "model": "logicgates:block/wire_cross/wire_cross_s_10", "y": 0 },
+
+		"swapped_direction=true,facing=east,powered_east=false,powered_west=true,powered_north=true": { "model": "logicgates:block/wire_cross/wire_cross_s_11", "y": 270 },
+		"swapped_direction=true,facing=west,powered_east=false,powered_west=true,powered_north=true": { "model": "logicgates:block/wire_cross/wire_cross_s_11", "y": 90 },
+		"swapped_direction=true,facing=north,powered_east=false,powered_west=true,powered_north=true": { "model": "logicgates:block/wire_cross/wire_cross_s_11", "y": 180 },
+		"swapped_direction=true,facing=south,powered_east=false,powered_west=true,powered_north=true": { "model": "logicgates:block/wire_cross/wire_cross_s_11", "y": 0 }
+	}
+}

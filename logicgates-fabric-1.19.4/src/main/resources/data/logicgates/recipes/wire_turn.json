@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "# ",
+        "RP"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:redstone_torch"
+        },
+        "R": {
+            "item": "minecraft:stone"
+        },
+		"P": {
+            "item": "minecraft:redstone"
+        }
+    },
+    "result": {
+        "item": "logicgates:wire_turn",
+        "count": 1
+    }
+}

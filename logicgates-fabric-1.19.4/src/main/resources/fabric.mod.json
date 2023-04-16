@@ -1,0 +1,33 @@
+{
+	"schemaVersion": 1,
+	"id": "logicgates",
+	"version": "${version}",
+
+	"name": "Logic Gates",
+	"description": "A Minecraft mod that adds logic gates to the game.",
+	"authors": ["TheCSDev"],
+	"contact":
+	{
+		"homepage": "https://github.com/TheCSDev",
+		"sources": "https://github.com/TheCSDev/mc-logic-gates",
+		"issues": "https://github.com/TheCSDev/mc-logic-gates/issues"
+	},
+
+	"license": "LGPL-3.0-or-later",
+	"icon": "assets/logicgates/icon.png",
+
+	"environment": "*",
+	"entrypoints":
+	{
+		"main": ["thecsdev.logicgates.LogicGates"]
+	},
+	"mixins": ["logicgates.mixins.json"],
+
+	"depends":
+	{
+		"fabricloader": ">=0.14.6",
+		"fabric": "*",
+		"minecraft": "1.19.x",
+		"java": ">=17"
+	}
+}
